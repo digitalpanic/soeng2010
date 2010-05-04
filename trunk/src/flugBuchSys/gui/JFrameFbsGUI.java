@@ -9,6 +9,10 @@ import javax.swing.JMenuItem;
 import javax.swing.JSeparator;
 import javax.swing.WindowConstants;
 import javax.swing.SwingUtilities;
+import java.awt.Dimension;
+import javax.swing.JToggleButton;
+import javax.swing.JButton;
+import java.awt.event.KeyEvent;
 
 public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 
@@ -38,6 +42,32 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 	private JMenu ReservierungMenu;
 	private JMenuItem Reservierung_anzeigen;
 	public static boolean neuebuchung;
+	private JButton TEST = null;
+	/**
+	 * This method initializes this
+	 * 
+	 */
+	private void initialize() {
+        this.setSize(new Dimension(576, 389));
+        this.setContentPane(getTEST());
+        this.setJMenuBar(jMenuBar1);
+			
+	}
+
+	/**
+	 * This method initializes TEST	
+	 * 	
+	 * @return javax.swing.JButton	
+	 */
+	private JButton getTEST() {
+		if (TEST == null) {
+			TEST = new JButton();
+			TEST.setSize(12,12);
+			TEST.setText("Test");
+			TEST.setMnemonic(KeyEvent.VK_UNDEFINED);
+		}
+		return TEST;
+	}
 
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
@@ -52,6 +82,7 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 
 	public JFrameFbsGUI() {
 		super();
+		initialize();
 		initGUI();
 	}
 
@@ -340,4 +371,4 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 			new JFrameReservierungSuchen("Reservierung anzeigen");
 		}
 	}
-}
+}  //  @jve:decl-index=0:visual-constraint="115,22"
