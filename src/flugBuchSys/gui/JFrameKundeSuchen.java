@@ -45,16 +45,17 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 
 	private static final long serialVersionUID = 1L;
 	
-	private JTextField jTextFieldKdnummer = new JTextField();
-	private JTextField jTextFieldAnrede = new JTextField();
-	private JTextField jTextFieldVorname = new JTextField();
-	private JTextField jTextFieldNachname = new JTextField();
-	private JTextField jTextFieldGebdatum = new JTextField();
-	private JTextField jTextFieldStrasse = new JTextField();
-	private JTextField jTextFieldHausnummer = new JTextField();
-	private JTextField jTextFieldOrt = new JTextField();
-	private JTextField jTextFieldPlz = new JTextField();
-	private JTextField jTextFieldZusatz = new JTextField();
+	public static JTextField jTextFieldKdnummer = new JTextField();
+	public static JTextField jTextFieldAnrede = new JTextField();
+	public static JTextField jTextFieldVorname = new JTextField();
+	public static JTextField jTextFieldNachname = new JTextField();
+	public static JTextField jTextFieldGebdatum = new JTextField();
+	public static JTextField jTextFieldStrasse = new JTextField();
+	public static JTextField jTextFieldHausnummer = new JTextField();
+	public static JTextField jTextFieldOrt = new JTextField();
+	public static JTextField jTextFieldPlz = new JTextField();
+	public static JTextField jTextFieldZusatz = new JTextField();
+	
 
 	JTextField[] jTextFieldArr = { jTextFieldKdnummer, jTextFieldAnrede, jTextFieldVorname,
 			jTextFieldNachname, jTextFieldGebdatum, jTextFieldStrasse,
@@ -110,9 +111,11 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 
 	//private JFrameSuchen ;
 	public static boolean gepaeck;
+	public static boolean visible;
 
 	public JFrameKundeSuchen(String strTitel) {
 		super(strTitel);
+		visible = true;
 		initGUI();
 		this.addMouseListener(this);
 		
@@ -156,7 +159,7 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 						jMenuItem1.setText("zum Hauptmenu");
 						
 					}
-					jMenuItem1.setActionCommand("jMenuItem1 wurde gedrueckt");
+					jMenuItem1.setActionCommand("zurueck");
 					jMenuItem1.addActionListener(this);
 					
 				}
@@ -295,50 +298,35 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 			this.setSize(600, 600);
 			this.setLocationRelativeTo(null);
 			this.setVisible(true);
+			visible = true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		  
 	
 	}
-	public void mouseClicked1(MouseEvent e) 
-	   {
-	         if(e.getClickCount()==2)
-	       {
-	        System.out.println("Mouse wurde geklickt!");
-	       }
-	   }
+	
 	
 	public void actionPerformed(ActionEvent ae) {
 
-		if ("jMenuItem1 wurde gedrueckt".equals(ae.getActionCommand())) {
+		if ("zurueck".equals(ae.getActionCommand())) {
+			visible = false;
 			dispose();
 			JFrameFbsGUI open = new JFrameFbsGUI();
 			open.setLocationRelativeTo(null);
 			open.setVisible(true);
 		}
 			if ("einschrittzurueck".equals(ae.getActionCommand())) {
+				visible = false;
 				this.setVisible(false);
 				new JFrameFlugSuchen("neue Buchung vornehmen");
 			}
 			
 		
 		if (ae.getActionCommand().equals("Weiter")) {
+			visible = false;
 			this.setVisible(false);
-			int n = JOptionPane
-			.showConfirmDialog(
-					inst,
-					"Plant der Kunde Zusatzgep‰ck (Sperrgep‰ck) mitzunehmen?",
-					"Sperrgep‰ck?",
-					JOptionPane.YES_NO_OPTION);
-	if (n == 0) {
-		gepaeck = true;
-		new JFrameBuchungBestaetigung("Buchung abschlieﬂen");
-	} else {
-		gepaeck = false;
-		new JFrameBuchungBestaetigung("Buchung abschlieﬂen");
-
-	}
+			new JFrameNeueBuchung("Neue Buchung");		
 		}
 		
 		

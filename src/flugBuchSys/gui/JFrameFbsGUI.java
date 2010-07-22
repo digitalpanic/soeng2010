@@ -302,7 +302,7 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent ae) {
 		if (ae.getActionCommand().equals("neue Buchung")) {
 			neuebuchung = true;
-			new JFrameNeueBuchung ("Neue Buchung anlegen");
+			new JFrameFlugSuchen ("Neue Buchung anlegen");
 			dispose();
 		}
 //		if (ae.getActionCommand().equals("Benutzer wechseln")) {

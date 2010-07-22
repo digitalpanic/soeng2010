@@ -18,6 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.SwingUtilities;
 
+import flugBuchSys.app.InterfaceSuchen;
 import flugBuchSys.app.NeueFlugBuchung;
 
 /**
@@ -134,6 +135,8 @@ public class JFrameNeueBuchung extends javax.swing.JFrame implements
 				jTextFieldVon = new JTextField();
 				getContentPane().add(jTextFieldVon);
 				jTextFieldVon.setBounds(23, 136, 113, 22);
+				
+				jTextFieldVon.setText(InterfaceSuchen.Route);
 			}
 			{
 				jLabelVon = new JLabel();
@@ -152,6 +155,7 @@ public class JFrameNeueBuchung extends javax.swing.JFrame implements
 				getContentPane().add(jTextFieldNach);
 				jTextFieldNach.setBounds(160, 136, 108, 22);
 				jTextFieldNach.setSize(113, 22);
+				jTextFieldNach.setText(InterfaceSuchen.Route);
 			}
 			{
 				jLabelAblfugdatum = new JLabel();
@@ -260,13 +264,13 @@ public class JFrameNeueBuchung extends javax.swing.JFrame implements
 				jTextFieldVorname = new JTextField();
 				getContentPane().add(jTextFieldVorname);
 				jTextFieldVorname.setBounds(23, 491, 97, 22);
-				// jTextFieldVorname.setText("Vorname");
+				jTextFieldVorname.setText(JFrameKundeSuchen.jTextFieldVorname.getText());
 			}
 			{
 				jTextFieldNachname = new JTextField();
 				getContentPane().add(jTextFieldNachname);
-				// jTextFieldNachname.setText("Nachname");
 				jTextFieldNachname.setBounds(166, 491, 118, 22);
+				jTextFieldNachname.setText(JFrameKundeSuchen.jTextFieldNachname.getText());
 			}
 
 			pack();

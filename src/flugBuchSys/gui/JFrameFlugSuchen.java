@@ -34,14 +34,15 @@ import flugBuchSys.app.ActionEventHandler;
 public class JFrameFlugSuchen extends JFrameSuchen implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
-	private JTextField jTextFieldFlugID = new JTextField();
-	private JTextField jTextFieldFlugzeugID = new JTextField();
-	private JTextField jTextFieldRoute = new JTextField();
-	private JTextField jTextFieldStartDate = new JTextField();
-	private JTextField jTextFieldEndDate = new JTextField();
-	private JTextField jTextFieldAuslEco = new JTextField();
-	private JTextField jTextFieldAuslBuis = new JTextField();
-	private JTextField jTextFieldAuslFirst = new JTextField();
+	public static JTextField jTextFieldFlugID = new JTextField();
+	public static JTextField jTextFieldFlugzeugID = new JTextField();
+	public static JTextField jTextFieldRoute = new JTextField();
+	public static JTextField jTextFieldStartDate = new JTextField();
+	public static JTextField jTextFieldEndDate = new JTextField();
+	public static JTextField jTextFieldAuslEco = new JTextField();
+	public static JTextField jTextFieldAuslBuis = new JTextField();
+	public static JTextField jTextFieldAuslFirst = new JTextField();
+	
 
 	JTextField[] jTextFieldArr = { jTextFieldFlugID, jTextFieldFlugzeugID,
 			jTextFieldRoute, jTextFieldStartDate, jTextFieldEndDate,
@@ -82,9 +83,11 @@ public class JFrameFlugSuchen extends JFrameSuchen implements ActionListener {
 	private String strActive = "*";
 
 	private JButton Weiter;
+	public static boolean visible = false;
 
 	public JFrameFlugSuchen(String str) {
 		super(str);
+		visible = true;
 		initGUI();
 	}
 
@@ -172,41 +175,41 @@ public class JFrameFlugSuchen extends JFrameSuchen implements ActionListener {
 				AuslFirst.setBounds(21, 284, 165, 16);
 			}
 
-//			if (JFrameFbsGUI.neuebuchung == true) {
-//				Flugsuchen = new JButton("Suchen");
-//				getContentPane().add(Flugsuchen);
-//				Flugsuchen.setBounds(327, 221, 121, 25);
-//				Flugsuchen.addActionListener(this);
-//				Flugsuchen.setActionCommand("FlugSuchen");
-//
-//				Weiter = new JButton("Weiter");
-//				getContentPane().add(Weiter);
-//				Weiter.setBounds(327, 251, 121, 25);
-//				Weiter.addActionListener(this);
-//				Weiter.setActionCommand("Weiter");
-//			}
+			if (JFrameFbsGUI.neuebuchung == true) {
+				Flugsuchen = new JButton("Suchen");
+				getContentPane().add(Flugsuchen);
+				Flugsuchen.setBounds(327, 221, 121, 25);
+				Flugsuchen.addActionListener(this);
+				Flugsuchen.setActionCommand("FlugSuchen");
+
+				Weiter = new JButton("Weiter");
+				getContentPane().add(Weiter);
+				Weiter.setBounds(327, 251, 121, 25);
+				Weiter.addActionListener(this);
+				Weiter.setActionCommand("Weiter");
+			}
 			if (JFrameFbsGUI.neuebuchung == false) {
-//				getContentPane().add(Active);
-//				Active.setBounds(22, 315, 164, 16);
-//
-//				jaButton = new JRadioButton("Ja");
-//				getContentPane().add(jaButton);
-//				jaButton.setBounds(186, 315, 52, 21);
-//				jaButton.setActionCommand("Ja");
-//
-//				neinButton = new JRadioButton("Nein");
-//				getContentPane().add(neinButton);
-//				neinButton.setBounds(243, 315, 72, 21);
-//				neinButton.setActionCommand("Nein");
-//
-//				// Group the radio buttons.
-//				final ButtonGroup group = new ButtonGroup();
-//				group.add(jaButton);
-//				group.add(neinButton);
-//
-//				// Register a listener for the radio buttons.
-//				jaButton.addActionListener(this);
-//				neinButton.addActionListener(this);
+				getContentPane().add(Active);
+				Active.setBounds(22, 315, 164, 16);
+
+				jaButton = new JRadioButton("Ja");
+				getContentPane().add(jaButton);
+				jaButton.setBounds(186, 315, 52, 21);
+				jaButton.setActionCommand("Ja");
+
+				neinButton = new JRadioButton("Nein");
+				getContentPane().add(neinButton);
+				neinButton.setBounds(243, 315, 72, 21);
+				neinButton.setActionCommand("Nein");
+
+				// Group the radio buttons.
+				final ButtonGroup group = new ButtonGroup();
+				group.add(jaButton);
+				group.add(neinButton);
+
+				// Register a listener for the radio buttons.
+				jaButton.addActionListener(this);
+				neinButton.addActionListener(this);
 
 				Flugsuchen = new JButton("Suchen");
 				getContentPane().add(Flugsuchen);
@@ -245,19 +248,23 @@ public class JFrameFlugSuchen extends JFrameSuchen implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) {
 		if (arg0.getActionCommand().equals("zurueck")) {
 			dispose();
+			visible = false;
 			JFrameFbsGUI open = new JFrameFbsGUI();
 			open.setLocationRelativeTo(null);
 			open.setVisible(true);
 		}
 		if (arg0.getActionCommand().equals("Weiter")) {
 			this.setVisible(false);
+			visible = false;
 			int n = JOptionPane.showConfirmDialog(inst,
 					"Ist der Kunde schon im System?", "Kunde vorhanden?",
 					JOptionPane.YES_NO_OPTION);
 			if (n == 0) {
 				new JFrameKundeSuchen("Kunde Suchen");
+				
 			} else {
 				new JFrameKundeAnlegen("Kunde Anlegen");
+				
 			}
 		}
 
