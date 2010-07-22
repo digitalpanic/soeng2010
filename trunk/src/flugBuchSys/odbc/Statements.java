@@ -16,7 +16,12 @@ public class Statements {
 	// jeder Verbindungsklasse einzeln gelesen werden müssen
 	public static String sDbDriver = "oracle.jdbc.driver.OracleDriver";
 //	public static String sDbUrl = "jdbc:oracle:thin:@192.168.100.8:1521:XE";
+
+//	 public static String sDbUrl = "jdbc:oracle:thin:@leicher.dyndns.tv:1521:XE";
 	 public static String sDbUrl = "jdbc:oracle:thin:@localhost:1521:XE";
+
+	 //public static String sDbUrl = "jdbc:oracle:thin:@localhost:1521:XE";
+
 	public static String sUsr = "SOENG";
 	public static String sPwd = "inderinc277";
 

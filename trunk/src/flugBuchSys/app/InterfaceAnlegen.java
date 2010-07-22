@@ -14,7 +14,7 @@ import flugBuchSys.gui.JFrameSuchen;
 
 import flugBuchSys.odbc.Statements;
 
-public class ActionEventHandlerAnlegen {
+public class InterfaceAnlegen {
 
 	public static void anlegen(JFrameAnlegen jFrame, String table) {
 		

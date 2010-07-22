@@ -162,59 +162,59 @@ public class JFrameFlugzeugSuchen extends JFrameSuchen implements
 				KapBuis.setText("Kapazitaet Business:");
 				KapBuis.setBounds(21, 131, 135, 16);
 
-				getContentPane().add(Active);
-				Active.setText("Ist das Flugzeug noch aktiv?");
-				Active.setBounds(22, 255, 165, 22);
-
-				jaButton = new JRadioButton();
-				getContentPane().add(jaButton);
-				jaButton.setText("Ja");
-				jaButton.setBounds(186, 253, 52, 21);
-				jaButton.setActionCommand("Ja");
-
-				neinButton = new JRadioButton();
-				getContentPane().add(neinButton);
-				neinButton.setText("Nein");
-				neinButton.setBounds(243, 253, 72, 21);
-				neinButton.setActionCommand("Nein");
+//				getContentPane().add(Active);
+//				Active.setText("Ist das Flugzeug noch aktiv?");
+//				Active.setBounds(22, 255, 165, 22);
+//
+//				jaButton = new JRadioButton();
+//				getContentPane().add(jaButton);
+//				jaButton.setText("Ja");
+//				jaButton.setBounds(186, 253, 52, 21);
+//				jaButton.setActionCommand("Ja");
+//
+//				neinButton = new JRadioButton();
+//				getContentPane().add(neinButton);
+//				neinButton.setText("Nein");
+//				neinButton.setBounds(243, 253, 72, 21);
+//				neinButton.setActionCommand("Nein");
 
 			}
-			// Group the radio buttons.
-			final ButtonGroup group = new ButtonGroup();
-			group.add(jaButton);
-			group.add(neinButton);
-
-			// Register a listener for the radio buttons.
-			jaButton.addActionListener(this);
-			neinButton.addActionListener(this);
+//			// Group the radio buttons.
+//			final ButtonGroup group = new ButtonGroup();
+//			group.add(jaButton);
+//			group.add(neinButton);
+//
+//			// Register a listener for the radio buttons.
+//			jaButton.addActionListener(this);
+//			neinButton.addActionListener(this);
 
 			{
 				Fsuchen = new JButton();
 				getContentPane().add(Fsuchen);
 				Fsuchen.setText("Suchen");
-				Fsuchen.setBounds(345, 142, 121, 25);
+				Fsuchen.setBounds(345, 220, 121, 25);
 				Fsuchen.addActionListener(this);
 				Fsuchen.setActionCommand("FlugzeugSuchen");
 
 			}
 
-			{
-				bchange = new JButton();
-				getContentPane().add(bchange);
-				bchange.setText("Aendern");
-				bchange.setBounds(345, 180, 121, 25);
-				bchange.addActionListener(this);
-				bchange.setActionCommand("FlugzeugAendern");
-
-			}
-			{
-				binactive = new JButton();
-				getContentPane().add(binactive);
-				binactive.setText("Loeschen");
-				binactive.setBounds(345, 215, 121, 25);
-				binactive.addActionListener(this);
-				binactive.setActionCommand("FlugzeugLoeschen");
-			}
+//			{
+//				bchange = new JButton();
+//				getContentPane().add(bchange);
+//				bchange.setText("Aendern");
+//				bchange.setBounds(345, 180, 121, 25);
+//				bchange.addActionListener(this);
+//				bchange.setActionCommand("FlugzeugAendern");
+//
+//			}
+//			{
+//				binactive = new JButton();
+//				getContentPane().add(binactive);
+//				binactive.setText("Loeschen");
+//				binactive.setBounds(345, 215, 121, 25);
+//				binactive.addActionListener(this);
+//				binactive.setActionCommand("FlugzeugLoeschen");
+//			}
 
 			pack();
 			this.setSize(550, 600);

@@ -37,7 +37,6 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private JMenuBar jMenuBar1;
 	private JMenu FlugzeugMenu;
-	private JMenuItem User_changer;
 	private JSeparator jSeparator1;
 	private JMenuItem Flugzeug_bearbeiten;
 	private JMenuItem Flugzeug_Suchen;
@@ -93,12 +92,8 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 			this.setPreferredSize(new java.awt.Dimension(800, 600));
 			this.setFont(new java.awt.Font("Arial Black", 0, 10));
 			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
-			if (JFrameLoginPanel.admin == true) {
-				this.setTitle("DispoFly - Angemeldet als Admin");
-			}
-			if (JFrameLoginPanel.admin == false) {
-				this.setTitle("DispoFly - Angemeldet als User");
-			}
+			this.setTitle("DispoFly");
+			
 			// new JFrameLoginPanel("Anmeldung").setVisible(false);
 			{
 				jMenuBar1 = new JMenuBar();
@@ -120,13 +115,6 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 
 					}
 
-					{
-						User_changer = new JMenuItem();
-						jMenu1.add(User_changer);
-						User_changer.setText("Benutzer Wechseln");
-						User_changer.addActionListener(this);
-						User_changer.setActionCommand("Benutzer wechseln");
-					}
 					{
 						jSeparator1 = new JSeparator();
 						jMenu1.add(jSeparator1);
@@ -163,13 +151,13 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 						Kunde_Suchen.setActionCommand("Kunde suchen");
 
 					}
-					{
-						Kunde_Bearbeiten = new JMenuItem();
-						KundenMenu.add(Kunde_Bearbeiten);
-						Kunde_Bearbeiten.setText("Kunde Bearbeiten");
-						Kunde_Bearbeiten.addActionListener(this);
-						Kunde_Bearbeiten.setActionCommand("Kunde bearbeiten");
-					}
+//					{
+//						Kunde_Bearbeiten = new JMenuItem();
+//						KundenMenu.add(Kunde_Bearbeiten);
+//						Kunde_Bearbeiten.setText("Kunde Bearbeiten");
+//						Kunde_Bearbeiten.addActionListener(this);
+//						Kunde_Bearbeiten.setActionCommand("Kunde bearbeiten");
+//					}
 				}
 				{
 					FlugMenu = new JMenu();
@@ -179,13 +167,14 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 					FlugMenu.setSize(69, 29);
 					FlugMenu.setPreferredSize(new java.awt.Dimension(45, 6));
 					{
-						if (JFrameLoginPanel.admin == true) {
-							Flug_Anlegen = new JMenuItem();
-							FlugMenu.add(Flug_Anlegen);
-							Flug_Anlegen.setText("Flug Anlegen");
-							Flug_Anlegen.addActionListener(this);
-							Flug_Anlegen.setActionCommand("Flug anlegen");
-						}
+						//if (JFrameLoginPanel.admin == true) 
+//						{
+//							Flug_Anlegen = new JMenuItem();
+//							FlugMenu.add(Flug_Anlegen);
+//							Flug_Anlegen.setText("Flug Anlegen");
+//							Flug_Anlegen.addActionListener(this);
+//							Flug_Anlegen.setActionCommand("Flug anlegen");
+//						}
 						{
 							Flug_Suchen = new JMenuItem();
 							FlugMenu.add(Flug_Suchen);
@@ -194,18 +183,20 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 							Flug_Suchen.setActionCommand("Flug suchen");
 						}
 						{
-							if (JFrameLoginPanel.admin == true) {
-								Flug_Bearbeiten = new JMenuItem();
-								FlugMenu.add(Flug_Bearbeiten);
-								Flug_Bearbeiten.setText("Flug Bearbeiten");
-								Flug_Bearbeiten.addActionListener(this);
-								Flug_Bearbeiten
-										.setActionCommand("Flug bearbeiten");
-							}
+//							//if (JFrameLoginPanel.admin == true) 
+//							{
+//								Flug_Bearbeiten = new JMenuItem();
+//								FlugMenu.add(Flug_Bearbeiten);
+//								Flug_Bearbeiten.setText("Flug Bearbeiten");
+//								Flug_Bearbeiten.addActionListener(this);
+//								Flug_Bearbeiten
+//										.setActionCommand("Flug bearbeiten");
+//							}
 						}
 					}
 					{
-						if (JFrameLoginPanel.admin == true) {
+						//if (JFrameLoginPanel.admin == true) 
+						{
 							FlugzeugMenu = new JMenu();
 							jMenuBar1.add(FlugzeugMenu);
 							FlugzeugMenu.setText("Flugzeug");
@@ -214,14 +205,14 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 							FlugzeugMenu
 									.setPreferredSize(new java.awt.Dimension(
 											80, 6));
-							{
-								Flugzeug_anlegen = new JMenuItem();
-								FlugzeugMenu.add(Flugzeug_anlegen);
-								Flugzeug_anlegen.setText("Flugzeug Anlegen");
-								Flugzeug_anlegen.addActionListener(this);
-								Flugzeug_anlegen
-										.setActionCommand("Flugzeug anlegen");
-							}
+//							{
+//								Flugzeug_anlegen = new JMenuItem();
+//								FlugzeugMenu.add(Flugzeug_anlegen);
+//								Flugzeug_anlegen.setText("Flugzeug Anlegen");
+//								Flugzeug_anlegen.addActionListener(this);
+//								Flugzeug_anlegen
+//										.setActionCommand("Flugzeug anlegen");
+//							}
 							{
 								Flugzeug_Suchen = new JMenuItem();
 								FlugzeugMenu.add(Flugzeug_Suchen);
@@ -230,15 +221,15 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 								Flugzeug_Suchen
 										.setActionCommand("Flugzeug suchen");
 							}
-							{
-								Flugzeug_bearbeiten = new JMenuItem();
-								FlugzeugMenu.add(Flugzeug_bearbeiten);
-								Flugzeug_bearbeiten.setText("Flugzeug ändern");
-								Flugzeug_bearbeiten.addActionListener(this);
-								Flugzeug_bearbeiten
-										.setActionCommand("Flugzeug bearbeiten");
-
-							}
+//							{
+//								Flugzeug_bearbeiten = new JMenuItem();
+//								FlugzeugMenu.add(Flugzeug_bearbeiten);
+//								Flugzeug_bearbeiten.setText("Flugzeug ändern");
+//								Flugzeug_bearbeiten.addActionListener(this);
+//								Flugzeug_bearbeiten
+//										.setActionCommand("Flugzeug bearbeiten");
+//
+//							}
 						}
 					}
 					{
@@ -257,20 +248,21 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 							Route_Suchen.addActionListener(this);
 							Route_Suchen.setActionCommand("Route suchen");
 
-							if (JFrameLoginPanel.admin == true) {
-								Route_anlegen = new JMenuItem();
-								RoutenMenu.add(Route_anlegen);
-								Route_anlegen.setText("Route anlegen");
-								Route_anlegen.addActionListener(this);
-								Route_anlegen.setActionCommand("Route anlegen");
-
-								Route_bearbeiten = new JMenuItem();
-								RoutenMenu.add(Route_bearbeiten);
-								Route_bearbeiten.setText("Route ändern");
-								Route_bearbeiten.addActionListener(this);
-								Route_bearbeiten
-										.setActionCommand("Route bearbeiten");
-							}
+							//if (JFrameLoginPanel.admin == true) 
+//							{
+//								Route_anlegen = new JMenuItem();
+//								RoutenMenu.add(Route_anlegen);
+//								Route_anlegen.setText("Route anlegen");
+//								Route_anlegen.addActionListener(this);
+//								Route_anlegen.setActionCommand("Route anlegen");
+//
+//								Route_bearbeiten = new JMenuItem();
+//								RoutenMenu.add(Route_bearbeiten);
+//								Route_bearbeiten.setText("Route ändern");
+//								Route_bearbeiten.addActionListener(this);
+//								Route_bearbeiten
+//										.setActionCommand("Route bearbeiten");
+//							}
 						}
 					}
 
@@ -313,10 +305,10 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 			new JFrameNeueBuchung ("Neue Buchung anlegen");
 			dispose();
 		}
-		if (ae.getActionCommand().equals("Benutzer wechseln")) {
-			new JFrameLoginPanel("Benutzer wechseln");
-			dispose();
-		}
+//		if (ae.getActionCommand().equals("Benutzer wechseln")) {
+//			new JFrameLoginPanel("Benutzer wechseln");
+//			dispose();
+//		}
 		if (ae.getActionCommand().equals("exit")) {
 			System.exit(0);
 		}
