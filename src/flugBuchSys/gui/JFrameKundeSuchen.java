@@ -26,7 +26,7 @@ import javax.swing.WindowConstants;
 
 
 import flugBuchSys.app.ActionEventHandler;
-import flugBuchSys.app.ActionEventHandlerSuchen;
+import flugBuchSys.app.InterfaceSuchen;
 
 //import flugBuchSys.app.ActionEventHandler;
 

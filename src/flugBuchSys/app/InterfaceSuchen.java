@@ -1,5 +1,6 @@
 package flugBuchSys.app;
 
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import javax.swing.JTextField;
 import flugBuchSys.gui.JFrameSuchen;
 import flugBuchSys.odbc.Statements;
 
-public class ActionEventHandlerSuchen {
+public class InterfaceSuchen {
 
 	
 	public static void suchen(JFrameSuchen jFrame, String table) {
@@ -62,6 +63,15 @@ public class ActionEventHandlerSuchen {
 		JTable jt = Statements.transformSelect(table, arrListLabArrSel,
 				arrListArrCondition);
 		jFrame.setJTable(jt);
+		jt.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent evt)
+			{
+				
+				System.out.println("maus wurde geklickt");
+			}
+		}
+		);
 		
 		
 	}

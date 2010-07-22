@@ -241,6 +241,8 @@ public class JFrameNeueBuchung extends javax.swing.JFrame implements
 				getContentPane().add(jButtonAbbruch);
 				jButtonAbbruch.setText("Abbrechen");
 				jButtonAbbruch.setBounds(311, 585, 79, 22);
+				jButtonAbbruch.addActionListener(this);
+				jButtonAbbruch.setActionCommand("Abbrechen");
 			}
 			{
 				jSeparator5 = new JSeparator();

@@ -23,11 +23,11 @@ public class ActionEventHandler {
 		String table = "Kunde";
 
 		if (ae.getActionCommand().equals("KundeSuchen")) {
-			ActionEventHandlerSuchen.suchen(jFrameKundeSuchen, table);
+			InterfaceSuchen.suchen(jFrameKundeSuchen, table);
 		}
 
 		if (ae.getActionCommand().equals("KundeLoeschen")) {
-			ActionEventHandlerAendern.loeschen(jFrameKundeSuchen, table);
+			InterfaceAendern.loeschen(jFrameKundeSuchen, table);
 		}
 
 	}
@@ -38,7 +38,7 @@ public class ActionEventHandler {
 		String table = "Kunde";
 
 		if (ae.getActionCommand().equals("KundeAnlegen")) {
-			ActionEventHandlerAnlegen.anlegen(jFrameKundeAnlegen, table);
+			InterfaceAnlegen.anlegen(jFrameKundeAnlegen, table);
 		}
 
 	}
@@ -49,11 +49,11 @@ public class ActionEventHandler {
 		String table = "Flug";
 
 		if (ae.getActionCommand().equals("FlugSuchen")) {
-			ActionEventHandlerSuchen.suchen(jFrameFlugSuchen, table);
+			InterfaceSuchen.suchen(jFrameFlugSuchen, table);
 		}
 
 		if (ae.getActionCommand().equals("FlugLoeschen")) {
-			ActionEventHandlerAendern.loeschen(jFrameFlugSuchen, table);
+			InterfaceAendern.loeschen(jFrameFlugSuchen, table);
 		}
 	}
 
@@ -64,7 +64,7 @@ public class ActionEventHandler {
 		System.out.println(ae.getActionCommand());
 
 		if (ae.getActionCommand().equals("FlugAnlegen")) {
-			ActionEventHandlerAnlegen.anlegen(jFrameFlugAnlegen, table);
+			InterfaceAnlegen.anlegen(jFrameFlugAnlegen, table);
 		}
 	}
 
@@ -74,11 +74,11 @@ public class ActionEventHandler {
 		String table = "Flugzeuge";
 
 		if (ae.getActionCommand().equals("FlugzeugSuchen")) {
-			ActionEventHandlerSuchen.suchen(jFrameFlugzeugSuchen, table);
+			InterfaceSuchen.suchen(jFrameFlugzeugSuchen, table);
 		}
 
 		if (ae.getActionCommand().equals("FlugzeugLoeschen")) {
-			ActionEventHandlerAendern.loeschen(jFrameFlugzeugSuchen, table);
+			InterfaceAendern.loeschen(jFrameFlugzeugSuchen, table);
 		}
 	}
 
@@ -88,7 +88,7 @@ public class ActionEventHandler {
 		String table = "Flugzeuge";
 
 		if (ae.getActionCommand().equals("FlugzeugAnlegen")) {
-			ActionEventHandlerAnlegen.anlegen(jFrameFlugzeugAnlegen, table);
+			InterfaceAnlegen.anlegen(jFrameFlugzeugAnlegen, table);
 		}
 	}
 
@@ -98,11 +98,11 @@ public class ActionEventHandler {
 		String table = "Route";
 
 		if (ae.getActionCommand().equals("RouteSuchen")) {
-			ActionEventHandlerSuchen.suchen(jFrameRouteSuchen, table);
+			InterfaceSuchen.suchen(jFrameRouteSuchen, table);
 		}
 
 		if (ae.getActionCommand().equals("RouteLoeschen")) {
-			ActionEventHandlerAendern.loeschen(jFrameRouteSuchen, table);
+			InterfaceAendern.loeschen(jFrameRouteSuchen, table);
 		}
 
 	}
@@ -113,7 +113,7 @@ public class ActionEventHandler {
 		String table = "Route";
 
 		if (ae.getActionCommand().equals("RouteAnlegen")) {
-			ActionEventHandlerAnlegen.anlegen(jFrameRouteAnlegen, table);
+			InterfaceAnlegen.anlegen(jFrameRouteAnlegen, table);
 		}
 
 	}
@@ -124,7 +124,7 @@ public class ActionEventHandler {
 		String table = "Reservierung";
 
 		if (ae.getActionCommand().equals("ReservierungSuchen")) {
-			ActionEventHandlerSuchen.suchen(jFrameReservierungSuchen, table);
+			InterfaceSuchen.suchen(jFrameReservierungSuchen, table);
 			//System.out.println("Leider noch nicht implementiert.");
 			
 			//ActionEventHandlerSuchen.suchen(jFrameReservierungSuchen, table);

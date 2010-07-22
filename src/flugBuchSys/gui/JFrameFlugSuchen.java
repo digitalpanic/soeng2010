@@ -172,65 +172,64 @@ public class JFrameFlugSuchen extends JFrameSuchen implements ActionListener {
 				AuslFirst.setBounds(21, 284, 165, 16);
 			}
 
-			if (JFrameFbsGUI.neuebuchung == true) {
-				Flugsuchen = new JButton("Suchen");
-				getContentPane().add(Flugsuchen);
-				Flugsuchen.setBounds(327, 221, 121, 25);
-				Flugsuchen.addActionListener(this);
-				Flugsuchen.setActionCommand("FlugSuchen");
-
-				Weiter = new JButton("Weiter");
-				getContentPane().add(Weiter);
-				Weiter.setBounds(327, 251, 121, 25);
-				Weiter.addActionListener(this);
-				Weiter.setActionCommand("Weiter");
-			}
+//			if (JFrameFbsGUI.neuebuchung == true) {
+//				Flugsuchen = new JButton("Suchen");
+//				getContentPane().add(Flugsuchen);
+//				Flugsuchen.setBounds(327, 221, 121, 25);
+//				Flugsuchen.addActionListener(this);
+//				Flugsuchen.setActionCommand("FlugSuchen");
+//
+//				Weiter = new JButton("Weiter");
+//				getContentPane().add(Weiter);
+//				Weiter.setBounds(327, 251, 121, 25);
+//				Weiter.addActionListener(this);
+//				Weiter.setActionCommand("Weiter");
+//			}
 			if (JFrameFbsGUI.neuebuchung == false) {
-				getContentPane().add(Active);
-				Active.setBounds(22, 315, 164, 16);
-
-				jaButton = new JRadioButton("Ja");
-				getContentPane().add(jaButton);
-				jaButton.setBounds(186, 315, 52, 21);
-				jaButton.setActionCommand("Ja");
-
-				neinButton = new JRadioButton("Nein");
-				getContentPane().add(neinButton);
-				neinButton.setBounds(243, 315, 72, 21);
-				neinButton.setActionCommand("Nein");
-
-				// Group the radio buttons.
-				final ButtonGroup group = new ButtonGroup();
-				group.add(jaButton);
-				group.add(neinButton);
-
-				// Register a listener for the radio buttons.
-				jaButton.addActionListener(this);
-				neinButton.addActionListener(this);
+//				getContentPane().add(Active);
+//				Active.setBounds(22, 315, 164, 16);
+//
+//				jaButton = new JRadioButton("Ja");
+//				getContentPane().add(jaButton);
+//				jaButton.setBounds(186, 315, 52, 21);
+//				jaButton.setActionCommand("Ja");
+//
+//				neinButton = new JRadioButton("Nein");
+//				getContentPane().add(neinButton);
+//				neinButton.setBounds(243, 315, 72, 21);
+//				neinButton.setActionCommand("Nein");
+//
+//				// Group the radio buttons.
+//				final ButtonGroup group = new ButtonGroup();
+//				group.add(jaButton);
+//				group.add(neinButton);
+//
+//				// Register a listener for the radio buttons.
+//				jaButton.addActionListener(this);
+//				neinButton.addActionListener(this);
 
 				Flugsuchen = new JButton("Suchen");
 				getContentPane().add(Flugsuchen);
-				Flugsuchen.setBounds(327, 221, 121, 25);
+				Flugsuchen.setBounds(327, 280, 121, 25);
 				Flugsuchen.addActionListener(this);
 				Flugsuchen.setActionCommand("FlugSuchen");
 			}
-			if (JFrameLoginPanel.admin == true
-					&& JFrameFbsGUI.neuebuchung == false) {
-				{
-					bchange = new JButton("Aendern");
-					getContentPane().add(bchange);
-					bchange.setBounds(327, 281, 121, 25);
-					bchange.addActionListener(this);
-					bchange.setActionCommand("FlugAendern");
-				}
-				{
-					binactive = new JButton();
-					getContentPane().add(binactive);
-					binactive.setText("Loeschen");
-					binactive.setBounds(327, 311, 121, 25);
-					binactive.addActionListener(this);
-					binactive.setActionCommand("FlugLoeschen");
-				}
+			 {
+//				{
+//					bchange = new JButton("Aendern");
+//					getContentPane().add(bchange);
+//					bchange.setBounds(327, 281, 121, 25);
+//					bchange.addActionListener(this);
+//					bchange.setActionCommand("FlugAendern");
+//				}
+//				{
+//					binactive = new JButton();
+//					getContentPane().add(binactive);
+//					binactive.setText("Loeschen");
+//					binactive.setBounds(327, 311, 121, 25);
+//					binactive.addActionListener(this);
+//					binactive.setActionCommand("FlugLoeschen");
+//				}
 			}
 
 			pack();

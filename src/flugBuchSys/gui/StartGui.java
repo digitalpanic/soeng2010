@@ -12,7 +12,7 @@ public class StartGui {
 		while (splashThread.isAlive() == true) {
 			// nichts tun
 		}
-		JFrameLoginPanel bucky = new JFrameLoginPanel("Anmeldung erforderlich");
+		JFrameFbsGUI bucky = new JFrameFbsGUI();
 		bucky.setSize(400, 300);
 		bucky.setLocationRelativeTo(null);
 		bucky.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
