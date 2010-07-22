@@ -12,6 +12,7 @@ import javax.swing.WindowConstants;
 
 //import flugBuchSys.app.NeueFlugBuchung;
 //import flugBuchSys.app.NeueGepaeckBuchung;
+import flugBuchSys.app.BuchungAbsetzen;
 import flugBuchSys.odbc.UpdateQueries;
 
 /**

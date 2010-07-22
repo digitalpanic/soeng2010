@@ -40,8 +40,6 @@ public class UpdateQueries extends Object {
 			st.executeQuery(SQLquery);
 
 			// Verbindungs beenden
-//			cn.close();
-//			st.close();
 
 			result = "Erfolg";
 		}
@@ -67,9 +65,7 @@ public class UpdateQueries extends Object {
 	
 	public static void commit(){
 		try {
-//			st.close();
 			cn.commit();
-			System.out.println("Commit wurde ausgeführt!");
 			cn.close();
 		} catch (SQLException e) {
 			System.out.println("Commit konnte leider nicht ausgeführt werden!");
@@ -82,7 +78,6 @@ public class UpdateQueries extends Object {
 		// Versuch des Rollback
 		try {
 			cn.rollback();
-			System.out.println("Rollback wurde ausgeführt!");
 			cn.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
