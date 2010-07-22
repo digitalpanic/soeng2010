@@ -10,8 +10,9 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.SwingUtilities;
 
-import flugBuchSys.app.NeueFlugBuchung;
-import flugBuchSys.app.NeueGepaeckBuchung;
+import flugBuchSys.app.Buchungsdaten;
+//import flugBuchSys.app.NeueFlugBuchung;
+//import flugBuchSys.app.NeueGepaeckBuchung;
 
 
 /**
@@ -118,7 +119,9 @@ public class JFrameGepaeckBuchen extends javax.swing.JFrame implements ActionLis
 //		}		
 		
 	if (ae.getActionCommand().equals("Weiter")){
-			NeueGepaeckBuchung.ExecuteGepaeckBuchungInsert();
+		//TODO AUSKOMMENTERIT ZUM TESTEN
+//			NeueGepaeckBuchung.ExecuteGepaeckBuchungInsert();
+		Buchungsdaten.DatenSpeichern();
 			this.setVisible(false);
 			new JFrameBuchungBestaetigung("Buchung abschlieﬂen");
 			

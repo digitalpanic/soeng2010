@@ -10,8 +10,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-import flugBuchSys.app.NeueFlugBuchung;
-import flugBuchSys.app.NeueGepaeckBuchung;
+//import flugBuchSys.app.NeueFlugBuchung;
+//import flugBuchSys.app.NeueGepaeckBuchung;
+import flugBuchSys.odbc.UpdateQueries;
 
 /**
  * This code was edited or generated using CloudGarden's Jigloo SWT/Swing GUI
@@ -250,13 +251,6 @@ public class JFrameBuchungBestaetigung extends javax.swing.JFrame implements
 				jButton1.setActionCommand("Abbrechen");
 			}
 
-			// jButtonzurueck = new JButton();
-			// getContentPane().add(jButtonzurueck);
-			// jButtonzurueck.setText("Zurück");
-			// jButtonzurueck.setBounds(354, 534, 116, 28);
-			// jButtonzurueck.addActionListener(this);
-			// jButtonzurueck.setActionCommand("zurueck");
-			// pack();
 			this.setSize(526, 619);
 			this.setLocationRelativeTo(null);
 			this.setVisible(true);
@@ -268,22 +262,11 @@ public class JFrameBuchungBestaetigung extends javax.swing.JFrame implements
 	public void actionPerformed(ActionEvent ae) {
 
 		if ("Bestätigen".equals(ae.getActionCommand())) {
-			// int n = JOptionPane
-			// .showConfirmDialog(
-			// null,
-			// "Sind Sie sicher dass Sie die Buchung nicht beenden möchten? Alle Eingaben gehen hiermit verloren!",
-			// "Buchungsvorgang abbrechen?",
-			// JOptionPane.YES_NO_OPTION);
-			// if (n == 0) {
-
+			UpdateQueries.commit();
 			dispose();
 			JFrameFbsGUI open = new JFrameFbsGUI();
 			open.setLocationRelativeTo(null);
 			open.setVisible(true);
-			// } else {
-			// // kehrt zurück zum Ausgangsbildschirm
-			// }
-
 		}
 		if ("Abbrechen".equals(ae.getActionCommand())) {
 			int n = JOptionPane
@@ -293,6 +276,7 @@ public class JFrameBuchungBestaetigung extends javax.swing.JFrame implements
 							"Buchungsvorgang abbrechen?",
 							JOptionPane.YES_NO_OPTION);
 			if (n == 0) {
+				UpdateQueries.rollback();
 				dispose();
 				JFrameFbsGUI open = new JFrameFbsGUI();
 				open.setLocationRelativeTo(null);

@@ -15,10 +15,8 @@ public class Statements {
 	// Globale festlegung der Parameter für die Datenbank, damit diese nicht in
 	// jeder Verbindungsklasse einzeln gelesen werden müssen
 	public static String sDbDriver = "oracle.jdbc.driver.OracleDriver";
-//	public static String sDbUrl = "jdbc:oracle:thin:@192.168.100.8:1521:XE";
+	public static String sDbUrl = "jdbc:oracle:thin:@192.168.100.12:1521:XE";
 
-//	 public static String sDbUrl = "jdbc:oracle:thin:@leicher.dyndns.tv:1521:XE";
-	 public static String sDbUrl = "jdbc:oracle:thin:@localhost:1521:XE";
 
 	 //public static String sDbUrl = "jdbc:oracle:thin:@localhost:1521:XE";
 
@@ -26,32 +24,6 @@ public class Statements {
 	public static String sPwd = "inderinc277";
 
 	public static String selectQry = null;
-
-	/**
-	 * Diese Methode ist nur vorübergehen in benutzung, da diese Aufrufe später
-	 * von der Logikschicht aufgerufen werden.
-	 * 
-	 * @param args
-	 *            Komandozeilenparameter
-	 */
-
-	/*
-	 * public static void main(String[] args) { // String[] column = {
-	 * "LANGTEXT", "LANDID" }; // String[][] values = { { "LANDID", "*E*" }, {
-	 * "KURZTEXT", "MUC" } }; // transformSelect("FLUGHAFEN", column, values);
-	 * 
-	 * String[] columns = { "VORNAME", "NACHNAME", "GEBURTSDATUM", "STRASSE",
-	 * "HAUSNUMMER", "ORT", "PLZ", "ZUSATZ", "ACTIVE" }; String[] values = {
-	 * "Florian", "Leicher", "14.10.1985", "Karlstrasse", "12", "Planegg",
-	 * "82152", "NA", "J" }; String table = "KUNDE"; transformInsert(columns,
-	 * table, values);
-	 * 
-	 * // String column = "TEXT"; // String table = "TEST"; // String value =
-	 * "VIER"; // String[][] condition = { { "ZAHL", "4" } }; //
-	 * transformUpdate(column, table, value, condition);
-	 * 
-	 * }
-	 */
 
 	/**
 	 * Aufruf von SelectQueries.java.
