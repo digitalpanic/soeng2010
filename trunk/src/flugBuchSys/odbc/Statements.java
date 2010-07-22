@@ -13,10 +13,10 @@ import javax.swing.JTable;
 public class Statements {
 
 	// Globale festlegung der Parameter für die Datenbank, damit diese nicht in
-	// jeder Verbinungsklasse einzeln gelesen werden müssen
+	// jeder Verbindungsklasse einzeln gelesen werden müssen
 	public static String sDbDriver = "oracle.jdbc.driver.OracleDriver";
 //	public static String sDbUrl = "jdbc:oracle:thin:@192.168.100.8:1521:XE";
-	 public static String sDbUrl = "jdbc:oracle:thin:@leicher.dyndns.tv:1521:XE";
+	 public static String sDbUrl = "jdbc:oracle:thin:@localhost:1521:XE";
 	public static String sUsr = "SOENG";
 	public static String sPwd = "inderinc277";
 
@@ -91,7 +91,7 @@ public class Statements {
 	 */
 	public static JTable transformSelect(String table, ArrayList strLabArrSel,
 			ArrayList arrListArrCondition) {
-		// Sting welcher die SQL-Abrfrage darstellt
+		// String welcher die SQL-Abrfrage darstellt
 
 		// Vordefinierte Strings welche Komponenten der SQL-Abfrage darstellen
 		String stmtSel = "SELECT ";

@@ -290,6 +290,7 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 				jLabelArr[i].setBounds(21, 35+(i*31), 135, 22);
 			}
 */			
+			
 			pack();
 			this.setSize(600, 600);
 			this.setLocationRelativeTo(null);
@@ -297,8 +298,17 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		  
+	
 	}
-
+	public void mouseClicked1(MouseEvent e) 
+	   {
+	         if(e.getClickCount()==2)
+	       {
+	        System.out.println("Mouse wurde geklickt!");
+	       }
+	   }
+	
 	public void actionPerformed(ActionEvent ae) {
 
 		if ("jMenuItem1 wurde gedrueckt".equals(ae.getActionCommand())) {
@@ -387,6 +397,7 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 		// Meine Klasse und Methode!!!
 		ActionEventHandler.actionperformed(ae, this);
 
+		
 	}
 	
 	

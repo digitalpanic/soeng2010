@@ -1,5 +1,7 @@
 package flugBuchSys.app;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 import javax.swing.JLabel;
@@ -11,6 +13,7 @@ import flugBuchSys.odbc.Statements;
 
 public class ActionEventHandlerSuchen {
 
+	
 	public static void suchen(JFrameSuchen jFrame, String table) {
 
 		JLabel[] jLabArr = jFrame.getJLabelArr();
@@ -54,18 +57,12 @@ public class ActionEventHandlerSuchen {
 		arrListArrCondition.add(arrListLabArrCond);
 		arrListArrCondition.add(arrListTexArrCond);
 
+		// Das JTable initialisieren
+		
 		JTable jt = Statements.transformSelect(table, arrListLabArrSel,
 				arrListArrCondition);
-
 		jFrame.setJTable(jt);
-		/*
-		 * JScrollPane scrollPane = new JScrollPane(jt);
-		 * scrollPane.setBounds(25, 400, 450, 100);
-		 * 
-		 * 
-		 * 
-		 * Container c1 = jFrame.getContentPane(); c1.add(scrollPane);
-		 */
+		
 		
 	}
 	
