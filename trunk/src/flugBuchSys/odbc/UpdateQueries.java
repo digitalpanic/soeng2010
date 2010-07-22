@@ -16,19 +16,13 @@ import oracle.jdbc.driver.*;
  */
 public class UpdateQueries extends Object {
 	public static String result = null;
-	private static String q;
-
-	public UpdateQueries(String SQLquery) {
-		// q = update(SQLquery);
-		// update(SQLquery);
-
-	}
+	public static Connection cn = null;
+	public static Statement st = null;
 
 	public static String update(String SQLquery) {
 		// Initialisieren der Datenbankverbindung
 		String sDbDriver = Statements.sDbDriver, sDbUrl = Statements.sDbUrl, sUsr = Statements.sUsr, sPwd = Statements.sPwd;
-
-		Connection cn = null;
+		
 		// Versuchen die Vebindung aufzubauen und das Update durchzuführen
 		try {
 			// Verbindung initialisieren
@@ -36,23 +30,22 @@ public class UpdateQueries extends Object {
 			try {
 				Class.forName(sDbDriver);
 			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			cn = DriverManager.getConnection(sDbUrl, sUsr, sPwd);
+			cn.setAutoCommit(false);
 
 			// Updatestatement absetzen
 			Statement st = cn.createStatement();
-
-			// ResultSet rs =
 			st.executeQuery(SQLquery);
 
 			// Verbindungs beenden
-			cn.close();
-			st.close();
+//			cn.close();
+//			st.close();
 
 			result = "Erfolg";
 		}
+		
 		// Fehlerbehandlung
 		catch (SQLException e) {
 			// Ausgabe der Fehlermeldung bei fehlerhaftem SQL
@@ -70,6 +63,30 @@ public class UpdateQueries extends Object {
 		}
 		// Rückgabe ob Erfolg oder Fehler
 		return result;
+	}
+	
+	public static void commit(){
+		try {
+//			st.close();
+			cn.commit();
+			System.out.println("Commit wurde ausgeführt!");
+			cn.close();
+		} catch (SQLException e) {
+			System.out.println("Commit konnte leider nicht ausgeführt werden!");
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public static void rollback(){
+		// Versuch des Rollback
+		try {
+			cn.rollback();
+			System.out.println("Rollback wurde ausgeführt!");
+			cn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

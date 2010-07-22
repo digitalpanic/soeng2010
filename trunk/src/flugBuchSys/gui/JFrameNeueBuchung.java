@@ -19,7 +19,7 @@ import javax.swing.WindowConstants;
 import javax.swing.SwingUtilities;
 
 import flugBuchSys.app.InterfaceSuchen;
-import flugBuchSys.app.NeueFlugBuchung;
+//import flugBuchSys.app.NeueFlugBuchung;
 
 /**
  * This code was edited or generated using CloudGarden's Jigloo SWT/Swing GUI
@@ -291,7 +291,8 @@ public class JFrameNeueBuchung extends javax.swing.JFrame implements
 		}
 
 		if (ae.getActionCommand().equals("Weiter")) {
-			NeueFlugBuchung.ExecuteBuchungInsert();
+			//TODO AUSKOMMENTIERT ZUM TESTEN
+			//NeueFlugBuchung.ExecuteBuchungInsert();
 			this.setVisible(false);
 			mitreisende = Integer.parseInt(JFrameNeueBuchung.jTextFieldPersonenZahl.getText());
 			if (mitreisende == 1) {
