@@ -10,7 +10,7 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.SwingUtilities;
 
-import flugBuchSys.app.Buchungsdaten;
+import flugBuchSys.app.BuchungAbsetzen;
 //import flugBuchSys.app.NeueFlugBuchung;
 //import flugBuchSys.app.NeueGepaeckBuchung;
 
@@ -121,7 +121,7 @@ public class JFrameGepaeckBuchen extends javax.swing.JFrame implements ActionLis
 	if (ae.getActionCommand().equals("Weiter")){
 		//TODO AUSKOMMENTERIT ZUM TESTEN
 //			NeueGepaeckBuchung.ExecuteGepaeckBuchungInsert();
-		Buchungsdaten.DatenSpeichern();
+		BuchungAbsetzen.DatenSpeichern();
 			this.setVisible(false);
 			new JFrameBuchungBestaetigung("Buchung abschlieﬂen");
 			
