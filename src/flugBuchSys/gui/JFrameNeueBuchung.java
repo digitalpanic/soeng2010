@@ -70,6 +70,7 @@ public class JFrameNeueBuchung extends javax.swing.JFrame implements
 	public JLabel jLabelPersonenangaben;
 	public JSeparator jSeparator5;
 	public JButton jButtonAbbruch;
+	public static int mitreisende;
 
 	/**
 	 * Auto-generated main method to display this JFrame
@@ -286,7 +287,14 @@ public class JFrameNeueBuchung extends javax.swing.JFrame implements
 		if (ae.getActionCommand().equals("Weiter")) {
 			NeueFlugBuchung.ExecuteBuchungInsert();
 			this.setVisible(false);
-			new JFrameGepaeckBuchen(null);
+			mitreisende = Integer.parseInt(JFrameNeueBuchung.jTextFieldPersonenZahl.getText());
+			if (mitreisende == 1) {
+			new JFrameGepaeckBuchen(null);}
+			else if (mitreisende > 1){
+				JFrameMitreisendeGrid open = new JFrameMitreisendeGrid();
+				open.setLocationRelativeTo(null);
+				open.setVisible(true);
+			}
 		}
 		if (ae.getActionCommand().equals("Abbrechen")) {
 			dispose();

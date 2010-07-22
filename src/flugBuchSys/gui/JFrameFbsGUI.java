@@ -3,17 +3,35 @@ package flugBuchSys.gui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JSeparator;
+import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 import javax.swing.SwingUtilities;
+
+import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JToggleButton;
 import javax.swing.JButton;
 import java.awt.event.KeyEvent;
+import javax.swing.ImageIcon;
 
+
+/**
+* This code was edited or generated using CloudGarden's Jigloo
+* SWT/Swing GUI Builder, which is free for non-commercial
+* use. If Jigloo is being used commercially (ie, by a corporation,
+* company or business for any purpose whatever) then you
+* should purchase a license for each developer using Jigloo.
+* Please visit www.cloudgarden.com for details.
+* Use of Jigloo implies acceptance of these licensing terms.
+* A COMMERCIAL LICENSE HAS NOT BEEN PURCHASED FOR
+* THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
+* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
+*/
 public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
@@ -42,31 +60,14 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 	private JMenu ReservierungMenu;
 	private JMenuItem Reservierung_anzeigen;
 	public static boolean neuebuchung;
-	private JButton TEST = null;
 	/**
 	 * This method initializes this
 	 * 
 	 */
 	private void initialize() {
         this.setSize(new Dimension(576, 389));
-        this.setContentPane(getTEST());
         this.setJMenuBar(jMenuBar1);
 			
-	}
-
-	/**
-	 * This method initializes TEST	
-	 * 	
-	 * @return javax.swing.JButton	
-	 */
-	private JButton getTEST() {
-		if (TEST == null) {
-			TEST = new JButton();
-			TEST.setSize(12,12);
-			TEST.setText("Test");
-			TEST.setMnemonic(KeyEvent.VK_UNDEFINED);
-		}
-		return TEST;
 	}
 
 	public static void main(String[] args) {
@@ -91,6 +92,7 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 			setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 			this.setPreferredSize(new java.awt.Dimension(800, 600));
 			this.setFont(new java.awt.Font("Arial Black", 0, 10));
+			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 			if (JFrameLoginPanel.admin == true) {
 				this.setTitle("DispoFly - Angemeldet als Admin");
 			}
@@ -296,6 +298,7 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 					this.setSize(800, 600);
 					this.setLocationRelativeTo(null);
 					this.setVisible(true);
+					
 					pack();
 				}
 			}
@@ -311,7 +314,7 @@ public class JFrameFbsGUI extends javax.swing.JFrame implements ActionListener {
 			dispose();
 		}
 		if (ae.getActionCommand().equals("Benutzer wechseln")) {
-			new JFrameLoginPanel("Anmeldung");
+			new JFrameLoginPanel("Benutzer wechseln");
 			dispose();
 		}
 		if (ae.getActionCommand().equals("exit")) {

@@ -124,7 +124,9 @@ public class ActionEventHandler {
 		String table = "Reservierung";
 
 		if (ae.getActionCommand().equals("ReservierungSuchen")) {
-			System.out.println("Leider noch nicht implementiert.");
+			ActionEventHandlerSuchen.suchen(jFrameReservierungSuchen, table);
+			//System.out.println("Leider noch nicht implementiert.");
+			
 			//ActionEventHandlerSuchen.suchen(jFrameReservierungSuchen, table);
 		}
 
