@@ -7,7 +7,7 @@ import flugBuchSys.gui.JFrameNeueBuchung;
 import flugBuchSys.gui.JFrameGepaeckBuchen;
 import flugBuchSys.odbc.UpdateQueries;
 
-public class Buchungsdaten {
+public class BuchungAbsetzen {
 
 	// Eingaben der Benutzer für die Buchung holen
 	public static String  rueck = JFrameNeueBuchung.rueck;;
