@@ -2,13 +2,10 @@ package flugBuchSys.app;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.ArrayList;
-
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-
 import flugBuchSys.gui.JFrameFlugSuchen;
 import flugBuchSys.gui.JFrameKundeSuchen;
 import flugBuchSys.gui.JFrameSuchen;
