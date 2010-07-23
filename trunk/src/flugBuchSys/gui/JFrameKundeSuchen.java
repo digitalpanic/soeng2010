@@ -1,6 +1,5 @@
 package flugBuchSys.gui;
 
-import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -17,27 +16,12 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.WindowConstants;
-
 import flugBuchSys.app.ActionEventHandler;
-import flugBuchSys.app.InterfaceSuchen;
 
-//import flugBuchSys.app.ActionEventHandler;
 
-/**
- * This code was edited or generated using CloudGarden's Jigloo SWT/Swing GUI
- * Builder, which is free for non-commercial use. If Jigloo is being used
- * commercially (ie, by a corporation, company or business for any purpose
- * whatever) then you should purchase a license for each developer using Jigloo.
- * Please visit www.cloudgarden.com for details. Use of Jigloo implies
- * acceptance of these licensing terms. A COMMERCIAL LICENSE HAS NOT BEEN
- * PURCHASED FOR THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED LEGALLY FOR
- * ANY CORPORATE OR COMMERCIAL PURPOSE.
- */
 public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 		MouseListener, KeyListener, ItemListener {
 
@@ -61,14 +45,10 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 
 	final ButtonGroup group = new ButtonGroup();
 	private JButton Ksuchen;
-
 	private JRadioButton neinButton;
 	private JRadioButton jaButton;
-
 	private String strActive = "*";
-
 	private ButtonGroup buttonGroup1;
-
 	private JLabel kdnummer = new JLabel("Kundennummer:");
 	private JLabel anrede = new JLabel("Anrede:");;
 	private JLabel vorname = new JLabel("Vorname:");
@@ -80,20 +60,13 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 	private JLabel postleitzahl = new JLabel("Postleitzahl / ZIP-CODE:");
 	private JLabel zusatz = new JLabel("Zusatz");
 	private JLabel active = new JLabel("Ist der Kunde noch aktiv?");
-
 	private JLabel[] jLabelArr = { kdnummer, anrede, vorname, nachname,
 			gebdatum, strasse, hausnummer, ort, postleitzahl, zusatz, active };
-
 	private JMenu jMenu1;
 	private JMenuBar Menu;
 	private JMenuItem jMenuItem1;
-
 	private JFrame inst;
-
-	// private JTable jTable = new JTable();
-
 	private String choice;
-
 	private String strKdnummer, strAnrede, strVorname, strNachname,
 			strGebdatum, strStrasse, strHausnummer, strWohnort, strPlz,
 			strZusatztext;
@@ -101,11 +74,8 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 	private String[] textArr = { strKdnummer, strAnrede, strVorname,
 			strNachname, strGebdatum, strStrasse, strHausnummer, strWohnort,
 			strPlz, strZusatztext, strActive };
-
 	private JButton Weiter;
 	private JMenuItem jMenuItem2;
-
-	// private JFrameSuchen ;
 	public static boolean gepaeck;
 	public static boolean visible;
 
@@ -268,10 +238,6 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 				neinButton.addActionListener(this);
 
 			}
-			/*
-			 * for (int i = 0; i < jLabelArr.length; i++) {
-			 * jLabelArr[i].setBounds(21, 35+(i*31), 135, 22); }
-			 */
 
 			pack();
 			this.setSize(600, 600);

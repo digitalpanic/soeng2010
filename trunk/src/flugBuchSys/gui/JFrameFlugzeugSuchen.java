@@ -2,7 +2,6 @@ package flugBuchSys.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -10,23 +9,12 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.WindowConstants;
 
 import flugBuchSys.app.ActionEventHandler;
 
-/**
- * This code was edited or generated using CloudGarden's Jigloo SWT/Swing GUI
- * Builder, which is free for non-commercial use. If Jigloo is being used
- * commercially (ie, by a corporation, company or business for any purpose
- * whatever) then you should purchase a license for each developer using Jigloo.
- * Please visit www.cloudgarden.com for details. Use of Jigloo implies
- * acceptance of these licensing terms. A COMMERCIAL LICENSE HAS NOT BEEN
- * PURCHASED FOR THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED LEGALLY FOR
- * ANY CORPORATE OR COMMERCIAL PURPOSE.
- */
 public class JFrameFlugzeugSuchen extends JFrameSuchen implements
 		ActionListener {
 
@@ -71,7 +59,7 @@ public class JFrameFlugzeugSuchen extends JFrameSuchen implements
 
 	private String planename, strFlugzeugId, strLuftfahrtkennzeichen,
 			strKapeco, strKapbuis, strKapfirst, strFlugzeugtyp,
-			strFlugzeugname, strActive="*";
+			strFlugzeugname, strActive = "*";
 	private String[] textArr = { strFlugzeugId, strLuftfahrtkennzeichen,
 			strKapeco, strKapbuis, strKapfirst, strFlugzeugtyp,
 			strFlugzeugname, strActive };
@@ -161,33 +149,7 @@ public class JFrameFlugzeugSuchen extends JFrameSuchen implements
 				getContentPane().add(KapBuis);
 				KapBuis.setText("Kapazitaet Business:");
 				KapBuis.setBounds(21, 131, 135, 16);
-
-//				getContentPane().add(Active);
-//				Active.setText("Ist das Flugzeug noch aktiv?");
-//				Active.setBounds(22, 255, 165, 22);
-//
-//				jaButton = new JRadioButton();
-//				getContentPane().add(jaButton);
-//				jaButton.setText("Ja");
-//				jaButton.setBounds(186, 253, 52, 21);
-//				jaButton.setActionCommand("Ja");
-//
-//				neinButton = new JRadioButton();
-//				getContentPane().add(neinButton);
-//				neinButton.setText("Nein");
-//				neinButton.setBounds(243, 253, 72, 21);
-//				neinButton.setActionCommand("Nein");
-
 			}
-//			// Group the radio buttons.
-//			final ButtonGroup group = new ButtonGroup();
-//			group.add(jaButton);
-//			group.add(neinButton);
-//
-//			// Register a listener for the radio buttons.
-//			jaButton.addActionListener(this);
-//			neinButton.addActionListener(this);
-
 			{
 				Fsuchen = new JButton();
 				getContentPane().add(Fsuchen);
@@ -197,24 +159,6 @@ public class JFrameFlugzeugSuchen extends JFrameSuchen implements
 				Fsuchen.setActionCommand("FlugzeugSuchen");
 
 			}
-
-//			{
-//				bchange = new JButton();
-//				getContentPane().add(bchange);
-//				bchange.setText("Aendern");
-//				bchange.setBounds(345, 180, 121, 25);
-//				bchange.addActionListener(this);
-//				bchange.setActionCommand("FlugzeugAendern");
-//
-//			}
-//			{
-//				binactive = new JButton();
-//				getContentPane().add(binactive);
-//				binactive.setText("Loeschen");
-//				binactive.setBounds(345, 215, 121, 25);
-//				binactive.addActionListener(this);
-//				binactive.setActionCommand("FlugzeugLoeschen");
-//			}
 
 			pack();
 			this.setSize(550, 600);
@@ -263,7 +207,7 @@ public class JFrameFlugzeugSuchen extends JFrameSuchen implements
 					// JOptionPane.WARNING_MESSAGE,
 					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 			if (n == 0) {
-				
+
 			} else {
 				// kehrt zurück zum Ausgangsbildschirm
 			}
