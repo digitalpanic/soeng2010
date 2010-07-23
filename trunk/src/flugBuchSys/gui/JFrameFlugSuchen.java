@@ -256,16 +256,16 @@ public class JFrameFlugSuchen extends JFrameSuchen implements ActionListener {
 		if (arg0.getActionCommand().equals("Weiter")) {
 			this.setVisible(false);
 			visible = false;
-			int n = JOptionPane.showConfirmDialog(inst,
-					"Ist der Kunde schon im System?", "Kunde vorhanden?",
-					JOptionPane.YES_NO_OPTION);
-			if (n == 0) {
-				new JFrameKundeSuchen("Kunde Suchen");
-				
-			} else {
-				new JFrameKundeAnlegen("Kunde Anlegen");
-				
-			}
+			new JFrameKundeSuchen("Kunde Suchen");
+//			int n = JOptionPane.showConfirmDialog(inst,
+//					"Ist der Kunde schon im System?", "Kunde vorhanden?",
+//					JOptionPane.YES_NO_OPTION);
+//			if (n == 0) {
+//				new JFrameKundeSuchen("Kunde Suchen");
+//				
+//			} else {
+//				new JFrameKundeAnlegen("Kunde Anlegen");
+//			}
 		}
 
 		if (arg0.getActionCommand().equals("FlugSuchen")) {
