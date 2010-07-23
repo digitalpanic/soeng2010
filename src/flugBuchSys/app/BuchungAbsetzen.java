@@ -75,7 +75,6 @@ public class BuchungAbsetzen {
 				+ "%') AND NACH = (SELECT FLUGHAFENID FROM FLUGHAFEN WHERE LANGTEXT LIKE '%"
 				+ strNach
 				+ "%')))");
-		System.out.println(statementUpdate);
 		return statementUpdate;
 		
 	}
