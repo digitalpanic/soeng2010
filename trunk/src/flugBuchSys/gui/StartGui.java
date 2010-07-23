@@ -13,7 +13,7 @@ public class StartGui {
 			// nichts tun
 		}
 		JFrameFbsGUI bucky = new JFrameFbsGUI();
-		bucky.setSize(400, 300);
+		bucky.setSize(800, 600);
 		bucky.setLocationRelativeTo(null);
 		bucky.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 		bucky.setVisible(true);
