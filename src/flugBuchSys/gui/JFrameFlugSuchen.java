@@ -17,7 +17,6 @@ import javax.swing.WindowConstants;
 
 import flugBuchSys.app.ActionEventHandler;
 
-
 public class JFrameFlugSuchen extends JFrameSuchen implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
@@ -252,8 +251,8 @@ public class JFrameFlugSuchen extends JFrameSuchen implements ActionListener {
 //				
 //			} else {
 //				new JFrameKundeAnlegen("Kunde Anlegen");
-//			}
-		}
+//				
+			}
 
 		if (arg0.getActionCommand().equals("FlugSuchen")) {
 			strflugid = jTextFieldFlugID.getText();
