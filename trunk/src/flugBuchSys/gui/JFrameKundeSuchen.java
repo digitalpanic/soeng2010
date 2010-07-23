@@ -1,6 +1,5 @@
 package flugBuchSys.gui;
 
-
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,7 +23,6 @@ import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.WindowConstants;
 
-
 import flugBuchSys.app.ActionEventHandler;
 import flugBuchSys.app.InterfaceSuchen;
 
@@ -44,7 +42,7 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 		MouseListener, KeyListener, ItemListener {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	public static JTextField jTextFieldKdnummer = new JTextField();
 	public static JTextField jTextFieldAnrede = new JTextField();
 	public static JTextField jTextFieldVorname = new JTextField();
@@ -55,25 +53,22 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 	public static JTextField jTextFieldOrt = new JTextField();
 	public static JTextField jTextFieldPlz = new JTextField();
 	public static JTextField jTextFieldZusatz = new JTextField();
-	
 
-	JTextField[] jTextFieldArr = { jTextFieldKdnummer, jTextFieldAnrede, jTextFieldVorname,
-			jTextFieldNachname, jTextFieldGebdatum, jTextFieldStrasse,
-			jTextFieldHausnummer, jTextFieldOrt, jTextFieldPlz, 
-			jTextFieldZusatz };
+	JTextField[] jTextFieldArr = { jTextFieldKdnummer, jTextFieldAnrede,
+			jTextFieldVorname, jTextFieldNachname, jTextFieldGebdatum,
+			jTextFieldStrasse, jTextFieldHausnummer, jTextFieldOrt,
+			jTextFieldPlz, jTextFieldZusatz };
 
 	final ButtonGroup group = new ButtonGroup();
-	private JButton binactive;
-	private JButton bchange;
 	private JButton Ksuchen;
 
 	private JRadioButton neinButton;
 	private JRadioButton jaButton;
-	
+
 	private String strActive = "*";
 
 	private ButtonGroup buttonGroup1;
-	
+
 	private JLabel kdnummer = new JLabel("Kundennummer:");
 	private JLabel anrede = new JLabel("Anrede:");;
 	private JLabel vorname = new JLabel("Vorname:");
@@ -85,31 +80,32 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 	private JLabel postleitzahl = new JLabel("Postleitzahl / ZIP-CODE:");
 	private JLabel zusatz = new JLabel("Zusatz");
 	private JLabel active = new JLabel("Ist der Kunde noch aktiv?");
-	
-	private JLabel[] jLabelArr = { kdnummer, anrede, vorname, nachname, gebdatum,
-			strasse, hausnummer, ort, postleitzahl, zusatz, active };
-	
+
+	private JLabel[] jLabelArr = { kdnummer, anrede, vorname, nachname,
+			gebdatum, strasse, hausnummer, ort, postleitzahl, zusatz, active };
+
 	private JMenu jMenu1;
 	private JMenuBar Menu;
 	private JMenuItem jMenuItem1;
 
 	private JFrame inst;
 
-//	private JTable jTable = new JTable();
-	
-	private String choice;
-	
-	private String strKdnummer, strAnrede, strVorname, strNachname, strGebdatum, strStrasse,
-			strHausnummer, strWohnort, strPlz, strZusatztext;
+	// private JTable jTable = new JTable();
 
-	private String[] textArr = { strKdnummer, strAnrede, strVorname, strNachname,
-			strGebdatum, strStrasse, strHausnummer, strWohnort, strPlz, 
-			strZusatztext, strActive };
-	
+	private String choice;
+
+	private String strKdnummer, strAnrede, strVorname, strNachname,
+			strGebdatum, strStrasse, strHausnummer, strWohnort, strPlz,
+			strZusatztext;
+
+	private String[] textArr = { strKdnummer, strAnrede, strVorname,
+			strNachname, strGebdatum, strStrasse, strHausnummer, strWohnort,
+			strPlz, strZusatztext, strActive };
+
 	private JButton Weiter;
 	private JMenuItem jMenuItem2;
 
-	//private JFrameSuchen ;
+	// private JFrameSuchen ;
 	public static boolean gepaeck;
 	public static boolean visible;
 
@@ -118,7 +114,7 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 		visible = true;
 		initGUI();
 		this.addMouseListener(this);
-		
+
 	}
 
 	private void initGUI() {
@@ -147,90 +143,88 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 					Menu.add(jMenu1);
 					jMenu1.setText("Zurueck");
 					{
-						if (JFrameFbsGUI.neuebuchung == true){
-						jMenuItem2 = new JMenuItem();
-						jMenu1.add(jMenuItem2);
-						jMenuItem2.setText("zur Flugauswahl");
-						jMenuItem2.setActionCommand("einschrittzurueck");
-						jMenuItem2.addActionListener(this);
+						if (JFrameFbsGUI.neuebuchung == true) {
+							jMenuItem2 = new JMenuItem();
+							jMenu1.add(jMenuItem2);
+							jMenuItem2.setText("zur Flugauswahl");
+							jMenuItem2.setActionCommand("einschrittzurueck");
+							jMenuItem2.addActionListener(this);
 						}
 						jMenuItem1 = new JMenuItem();
 						jMenu1.add(jMenuItem1);
 						jMenuItem1.setText("zum Hauptmenu");
-						
+
 					}
 					jMenuItem1.setActionCommand("zurueck");
 					jMenuItem1.addActionListener(this);
-					
+
 				}
 			}
 			{
-				
+
 				getContentPane().add(jTextFieldAnrede);
 				jTextFieldAnrede.addKeyListener(this);
 				jTextFieldAnrede.setBounds(186, 36, 129, 21);
-			
+
 				getContentPane().add(jTextFieldVorname);
 				jTextFieldVorname.setBounds(186, 67, 129, 21);
-			
+
 				getContentPane().add(jTextFieldNachname);
 				jTextFieldNachname.setBounds(186, 98, 129, 21);
-			
+
 				getContentPane().add(anrede);
 				anrede.setBounds(21, 35, 135, 22);
-			
+
 				getContentPane().add(vorname);
 				vorname.setBounds(21, 66, 135, 22);
-			
+
 				getContentPane().add(nachname);
 				nachname.setBounds(21, 97, 135, 22);
-			
+
 				getContentPane().add(strasse);
 				strasse.setBounds(21, 159, 135, 22);
-			
+
 				getContentPane().add(jTextFieldGebdatum);
 				jTextFieldGebdatum.setBounds(186, 129, 129, 21);
-			
+
 				getContentPane().add(jTextFieldHausnummer);
 				jTextFieldHausnummer.setBounds(448, 160, 41, 21);
-			
+
 				getContentPane().add(hausnummer);
 				hausnummer.setBounds(327, 164, 121, 16);
-			
+
 				getContentPane().add(jTextFieldStrasse);
 				jTextFieldStrasse.setBounds(186, 162, 129, 21);
-			
+
 				getContentPane().add(jTextFieldPlz);
 				jTextFieldPlz.setBounds(186, 193, 129, 21);
-			
+
 				getContentPane().add(jTextFieldOrt);
 				jTextFieldOrt.setBounds(186, 223, 129, 21);
-			
+
 				getContentPane().add(postleitzahl);
 				postleitzahl.setBounds(21, 188, 165, 22);
-			
-				
+
 				getContentPane().add(gebdatum);
 				gebdatum.setBounds(21, 131, 135, 16);
-			
+
 				getContentPane().add(ort);
 				ort.setBounds(22, 224, 165, 16);
-			
+
 				getContentPane().add(zusatz);
 				zusatz.setBounds(22, 286, 79, 16);
-			
+
 				getContentPane().add(jTextFieldKdnummer);
 				jTextFieldKdnummer.setBounds(186, 253, 129, 21);
-			
+
 				getContentPane().add(jTextFieldZusatz);
 				jTextFieldZusatz.setBounds(186, 284, 129, 21);
-			
+
 				getContentPane().add(kdnummer);
 				kdnummer.setBounds(22, 255, 165, 16);
 			}
 
-			if (JFrameFbsGUI.neuebuchung == true)
-			{				
+			if (JFrameFbsGUI.neuebuchung == true) {
 				Weiter = new JButton("Weiter");
 				getContentPane().add(Weiter);
 				Weiter.setBounds(327, 252, 121, 25);
@@ -246,25 +240,11 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 				Ksuchen.setActionCommand("KundeSuchen");
 
 			}
-			if (JFrameFbsGUI.neuebuchung == false)
-			{
-				bchange = new JButton();
-				getContentPane().add(bchange);
-				bchange.setText("Ändern");
-				bchange.setBounds(327, 251, 121, 25);
-				bchange.addActionListener(this);
-				bchange.setActionCommand("KundeAendern");
-			
-				binactive = new JButton();
-				getContentPane().add(binactive);
-				binactive.setText("Loeschen");
-				binactive.setBounds(327, 283, 121, 25);
-				binactive.addActionListener(this);
-				binactive.setActionCommand("KundeLoeschen");
-				
+			if (JFrameFbsGUI.neuebuchung == false) {
+
 				getContentPane().add(getActive());
 				getActive().setBounds(22, 315, 164, 16);
-				
+
 				{
 					jaButton = new JRadioButton("Ja");
 					getContentPane().add(jaButton);
@@ -288,12 +268,11 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 				neinButton.addActionListener(this);
 
 			}
-/*
-			for (int i = 0; i < jLabelArr.length; i++) {
-				jLabelArr[i].setBounds(21, 35+(i*31), 135, 22);
-			}
-*/			
-			
+			/*
+			 * for (int i = 0; i < jLabelArr.length; i++) {
+			 * jLabelArr[i].setBounds(21, 35+(i*31), 135, 22); }
+			 */
+
 			pack();
 			this.setSize(600, 600);
 			this.setLocationRelativeTo(null);
@@ -302,11 +281,9 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		  
-	
+
 	}
-	
-	
+
 	public void actionPerformed(ActionEvent ae) {
 
 		if ("zurueck".equals(ae.getActionCommand())) {
@@ -316,20 +293,18 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 			open.setLocationRelativeTo(null);
 			open.setVisible(true);
 		}
-			if ("einschrittzurueck".equals(ae.getActionCommand())) {
-				visible = false;
-				this.setVisible(false);
-				new JFrameFlugSuchen("neue Buchung vornehmen");
-			}
-			
-		
+		if ("einschrittzurueck".equals(ae.getActionCommand())) {
+			visible = false;
+			this.setVisible(false);
+			new JFrameFlugSuchen("neue Buchung vornehmen");
+		}
+
 		if (ae.getActionCommand().equals("Weiter")) {
 			visible = false;
 			this.setVisible(false);
-			new JFrameNeueBuchung("Neue Buchung");		
+			new JFrameNeueBuchung("Neue Buchung");
 		}
-		
-		
+
 		if (ae.getActionCommand().equals("KundeAendern")) {
 			int n = JOptionPane
 					.showConfirmDialog(
@@ -358,7 +333,7 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 			strKdnummer = jTextFieldKdnummer.getText();
 			strZusatztext = jTextFieldZusatz.getText();
 			choice = ae.getActionCommand();
-			
+
 		}
 
 		if (ae.getActionCommand().equals("KundeLoeschen")) {
@@ -373,25 +348,20 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 				// kehrt zurück zum Ausgangsbildschirm
 			}
 		}
-		
-		if (ae.getActionCommand().equals("Ja")){
+
+		if (ae.getActionCommand().equals("Ja")) {
 			setStrActive("J");
 		}
-		
-		if (ae.getActionCommand().equals("Nein")){
+
+		if (ae.getActionCommand().equals("Nein")) {
 			setStrActive("N");
 		}
-		
+
 		// Meine Klasse und Methode!!!
 		ActionEventHandler.actionperformed(ae, this);
 
-		
 	}
-	
-	
-	
 
-	
 	public JTextField getJTextFieldKdnummer() {
 		return jTextFieldKdnummer;
 	}
@@ -478,22 +448,6 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 
 	public void setJTextFieldArr(JTextField[] textFieldArr) {
 		jTextFieldArr = textFieldArr;
-	}
-
-	public JButton getBinactive() {
-		return binactive;
-	}
-
-	public void setBinactive(JButton binactive) {
-		this.binactive = binactive;
-	}
-
-	public JButton getBchange() {
-		return bchange;
-	}
-
-	public void setBchange(JButton bchange) {
-		this.bchange = bchange;
 	}
 
 	public JButton getKsuchen() {
@@ -664,7 +618,6 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 		this.inst = inst;
 	}
 
-
 	public String getChoice() {
 		return choice;
 	}
@@ -795,57 +748,47 @@ public class JFrameKundeSuchen extends JFrameSuchen implements ActionListener,
 
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void mouseEntered(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void mouseExited(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 	public void itemStateChanged(ItemEvent arg0) {
 		// TODO Auto-generated method stub
-		
-	}
 
-	
+	}
 
 }
