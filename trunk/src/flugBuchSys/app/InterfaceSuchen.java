@@ -82,7 +82,7 @@ public class InterfaceSuchen {
 		jt.addMouseListener(new MouseAdapter()
 		{
 			public void mouseClicked(MouseEvent evt)
-			{
+			{	new Application();
 				int row = jt.getSelectedRow();
 				if (JFrameFlugSuchen.visible == true){
 					FlugID = (String.valueOf(jt.getValueAt(row, 0)));
@@ -96,7 +96,7 @@ public class InterfaceSuchen {
 					
 					JFrameFlugSuchen.jTextFieldFlugID.setText(FlugID);
 					JFrameFlugSuchen.jTextFieldFlugzeugID.setText(FlugzeugID);
-					JFrameFlugSuchen.jTextFieldRoute.setText(Route);
+					JFrameFlugSuchen.jTextFieldRoute.setText(Application.von + " nach " + Application.nach);
 					JFrameFlugSuchen.jTextFieldStartDate.setText(Abflug);
 					JFrameFlugSuchen.jTextFieldEndDate.setText(Ankunft);
 					JFrameFlugSuchen.jTextFieldAuslEco.setText(AuslEco);

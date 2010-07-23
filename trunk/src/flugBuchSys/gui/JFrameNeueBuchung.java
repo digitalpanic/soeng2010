@@ -11,9 +11,13 @@ import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.SwingUtilities;
+import flugBuchSys.app.Application;
 import flugBuchSys.app.InterfaceSuchen;
 
+
+
 @SuppressWarnings("serial")
+
 public class JFrameNeueBuchung extends javax.swing.JFrame implements
 		ActionListener {
 	public JRadioButton jRadioButtonHinUndRueck;
@@ -119,7 +123,7 @@ public class JFrameNeueBuchung extends javax.swing.JFrame implements
 				getContentPane().add(jTextFieldVon);
 				jTextFieldVon.setBounds(23, 136, 113, 22);
 
-				jTextFieldVon.setText(InterfaceSuchen.Route);
+				jTextFieldVon.setText(Application.von);
 			}
 			{
 				jLabelVon = new JLabel();
@@ -138,7 +142,7 @@ public class JFrameNeueBuchung extends javax.swing.JFrame implements
 				getContentPane().add(jTextFieldNach);
 				jTextFieldNach.setBounds(160, 136, 108, 22);
 				jTextFieldNach.setSize(113, 22);
-				jTextFieldNach.setText(InterfaceSuchen.Route);
+				jTextFieldNach.setText(Application.nach);
 			}
 			{
 				jLabelAblfugdatum = new JLabel();
