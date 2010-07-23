@@ -1,36 +1,19 @@
 package flugBuchSys.gui;
 
-import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.ButtonGroup;
-import javax.swing.ButtonModel;
-import javax.swing.ComboBoxModel;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
-
 import javax.swing.WindowConstants;
 import javax.swing.SwingUtilities;
-
 import flugBuchSys.app.InterfaceSuchen;
-//import flugBuchSys.app.NeueFlugBuchung;
 
-/**
- * This code was edited or generated using CloudGarden's Jigloo SWT/Swing GUI
- * Builder, which is free for non-commercial use. If Jigloo is being used
- * commercially (ie, by a corporation, company or business for any purpose
- * whatever) then you should purchase a license for each developer using Jigloo.
- * Please visit www.cloudgarden.com for details. Use of Jigloo implies
- * acceptance of these licensing terms. A COMMERCIAL LICENSE HAS NOT BEEN
- * PURCHASED FOR THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED LEGALLY FOR
- * ANY CORPORATE OR COMMERCIAL PURPOSE.
- */
+@SuppressWarnings("serial")
 public class JFrameNeueBuchung extends javax.swing.JFrame implements
 		ActionListener {
 	public JRadioButton jRadioButtonHinUndRueck;
@@ -135,7 +118,7 @@ public class JFrameNeueBuchung extends javax.swing.JFrame implements
 				jTextFieldVon = new JTextField();
 				getContentPane().add(jTextFieldVon);
 				jTextFieldVon.setBounds(23, 136, 113, 22);
-				
+
 				jTextFieldVon.setText(InterfaceSuchen.Route);
 			}
 			{
@@ -264,13 +247,15 @@ public class JFrameNeueBuchung extends javax.swing.JFrame implements
 				jTextFieldVorname = new JTextField();
 				getContentPane().add(jTextFieldVorname);
 				jTextFieldVorname.setBounds(23, 491, 97, 22);
-				jTextFieldVorname.setText(JFrameKundeSuchen.jTextFieldVorname.getText());
+				jTextFieldVorname.setText(JFrameKundeSuchen.jTextFieldVorname
+						.getText());
 			}
 			{
 				jTextFieldNachname = new JTextField();
 				getContentPane().add(jTextFieldNachname);
 				jTextFieldNachname.setBounds(166, 491, 118, 22);
-				jTextFieldNachname.setText(JFrameKundeSuchen.jTextFieldNachname.getText());
+				jTextFieldNachname.setText(JFrameKundeSuchen.jTextFieldNachname
+						.getText());
 			}
 
 			pack();
@@ -291,13 +276,13 @@ public class JFrameNeueBuchung extends javax.swing.JFrame implements
 		}
 
 		if (ae.getActionCommand().equals("Weiter")) {
-			//TODO AUSKOMMENTIERT ZUM TESTEN
-			//NeueFlugBuchung.ExecuteBuchungInsert();
 			this.setVisible(false);
-			mitreisende = Integer.parseInt(JFrameNeueBuchung.jTextFieldPersonenZahl.getText());
+			mitreisende = Integer
+					.parseInt(JFrameNeueBuchung.jTextFieldPersonenZahl
+							.getText());
 			if (mitreisende == 1) {
-			new JFrameGepaeckBuchen(null);}
-			else if (mitreisende > 1){
+				new JFrameGepaeckBuchen(null);
+			} else if (mitreisende > 1) {
 				JFrameMitreisendeGrid open = new JFrameMitreisendeGrid();
 				open.setLocationRelativeTo(null);
 				open.setVisible(true);
