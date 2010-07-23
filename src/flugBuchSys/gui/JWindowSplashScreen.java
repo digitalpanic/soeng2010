@@ -31,7 +31,7 @@ public class JWindowSplashScreen extends JWindow implements Runnable {
 
 		try {
 			splashImage = getToolkit().getImage(
-					new URL("http://www.digitalpanic.de/splashscreen.gif"));
+					new URL("http://www.digidtalpanic.de/splashscreen.gif"));
 			g.drawImage(splashImage, 0, 0, this);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
