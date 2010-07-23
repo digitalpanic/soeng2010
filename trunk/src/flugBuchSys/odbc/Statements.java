@@ -15,7 +15,7 @@ public class Statements {
 	// Globale festlegung der Parameter für die Datenbank, damit diese nicht in
 	// jeder Verbindungsklasse einzeln gelesen werden müssen
 	public static String sDbDriver = "oracle.jdbc.driver.OracleDriver";
-	public static String sDbUrl = "jdbc:oracle:thin:@192.168.100.12:1521:XE";
+	public static String sDbUrl = "jdbc:oracle:thin:@localhost:1521:XE";
 
 
 	 //public static String sDbUrl = "jdbc:oracle:thin:@localhost:1521:XE";

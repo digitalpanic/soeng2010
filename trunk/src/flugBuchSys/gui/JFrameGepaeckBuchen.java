@@ -85,7 +85,9 @@ public class JFrameGepaeckBuchen extends javax.swing.JFrame implements
 
 		if (ae.getActionCommand().equals("Weiter")) {
 
-			BuchungAbsetzen.DatenSpeichern();
+			// Vorhandene Daten werden in die Datenbank geschrieben, aber noch ohne commit
+//			BuchungAbsetzen.DatenSpeichern();
+			
 			this.setVisible(false);
 			new JFrameBuchungBestaetigung("Buchung abschlieﬂen");
 

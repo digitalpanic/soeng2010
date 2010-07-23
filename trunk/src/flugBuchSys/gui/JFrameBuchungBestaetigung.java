@@ -5,10 +5,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.JTextPane;
 import javax.swing.WindowConstants;
+
+import flugBuchSys.app.BuchungAbsetzen;
 import flugBuchSys.odbc.UpdateQueries;
 
 
@@ -230,8 +234,11 @@ public class JFrameBuchungBestaetigung extends javax.swing.JFrame implements
 
 	public void actionPerformed(ActionEvent ae) {
 
+		
+		
 		if ("Bestätigen".equals(ae.getActionCommand())) {
-			UpdateQueries.commit();
+			BuchungAbsetzen.CommitBuchung();
+			JOptionPane.showMessageDialog(null, "Reservierung wurde getätigt");
 			dispose();
 			JFrameFbsGUI open = new JFrameFbsGUI();
 			open.setLocationRelativeTo(null);
@@ -245,7 +252,8 @@ public class JFrameBuchungBestaetigung extends javax.swing.JFrame implements
 							"Buchungsvorgang abbrechen?",
 							JOptionPane.YES_NO_OPTION);
 			if (n == 0) {
-				UpdateQueries.rollback();
+				BuchungAbsetzen.RollbackBuchung();
+				JOptionPane.showMessageDialog(null, "Reservierungsvorgang wurde abgebrochen");
 				dispose();
 				JFrameFbsGUI open = new JFrameFbsGUI();
 				open.setLocationRelativeTo(null);

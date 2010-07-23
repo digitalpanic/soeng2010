@@ -32,6 +32,7 @@ public class UpdateQueries extends Object {
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			}
+			
 			cn = DriverManager.getConnection(sDbUrl, sUsr, sPwd);
 			cn.setAutoCommit(false);
 
@@ -66,7 +67,7 @@ public class UpdateQueries extends Object {
 	public static void commit(){
 		try {
 			cn.commit();
-			cn.close();
+			//cn.close();
 		} catch (SQLException e) {
 			System.out.println("Commit konnte leider nicht ausgeführt werden!");
 			e.printStackTrace();
@@ -78,10 +79,11 @@ public class UpdateQueries extends Object {
 		// Versuch des Rollback
 		try {
 			cn.rollback();
-			cn.close();
+			//cn.close();
 		} catch (SQLException e) {
+			System.out.println("Fehler beim Rollback");
 			e.printStackTrace();
+			
 		}
 	}
-
 }

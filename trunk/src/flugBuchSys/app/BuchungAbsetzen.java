@@ -30,6 +30,7 @@ public class BuchungAbsetzen {
 			.parseInt(JFrameGepaeckBuchen.jTextFieldGepackstuecke.getText());
 
 	public static String GenerateInsertString() {
+
 		// Insert String zusammenbauen
 		String Statement = ("INSERT INTO RESERVIERUNG (KUNDENNUMMER, FLUGID, PASSAGIERE, RUECKFLUG, KLASSE, ACTIVE, GEPAECK) VALUES ((SELECT KUNDENNUMMER FROM KUNDE WHERE VORNAME LIKE '%"
 				+ strVorname
@@ -46,14 +47,12 @@ public class BuchungAbsetzen {
 				+ "', '"
 				+ strServiceKlasse + "', 'J', " + gepaeckstuecke + ")");
 
-		// Insert String zurückgeben
 		return Statement;
 
 	}
 
-	public static String UpdateAuslasung(){
-		
-		// Umbenennen derKlassen für die Datenbank
+	public static String StringAuslasungAnpassen() {
+		// Umbenennen der Klassen für die Datenbank
 		String Klasse = null;
 		if (strServiceKlasse == "First") {
 			Klasse = ("AUSLFIRST");
@@ -61,31 +60,42 @@ public class BuchungAbsetzen {
 			Klasse = ("AUSLECO");
 		} else if (strServiceKlasse == "Business") {
 			Klasse = ("AUSLBUIS");
-		}		
-		
-		// String zusammensetzen
-		String statementUpdate = ("UPDATE FLUG SET "	
-				+ Klasse 
-				+ " = " 
-				+ Klasse 
-				+ " + " 
-				+ personenzahl 
+		}
+
+		String Statement = ("UPDATE FLUG SET "
+				+ Klasse
+				+ " = "
+				+ Klasse
+				+ " + "
+				+ personenzahl
 				+ " WHERE FLUGID = (SELECT FLUGID FROM FLUG WHERE ROUTE = (SELECT ROUTEID FROM ROUTE WHERE VON = (SELECT FLUGHAFENID FROM FLUGHAFEN WHERE LANGTEXT LIKE '%"
 				+ strVon
 				+ "%') AND NACH = (SELECT FLUGHAFENID FROM FLUGHAFEN WHERE LANGTEXT LIKE '%"
-				+ strNach
-				+ "%')))");
-		return statementUpdate;
-		
+				+ strNach + "%')))");
+
+		return Statement;
 	}
 
-	public static void DatenSpeichern() {
-		UpdateQueries.update(GenerateInsertString());
-		UpdateQueries.update(UpdateAuslasung());
+	public static void CommitBuchung(){
+		DatenSpeichern();
+		UpdateQueries.commit();
+		AuslasungSetzen();
+		UpdateQueries.commit();
 	}
 	
-	public static void SetAusl(){
-		UpdateQueries.update(UpdateAuslasung());
+	public static void RollbackBuchung(){
+		DatenSpeichern();
+		UpdateQueries.rollback();
+		AuslasungSetzen();
+		UpdateQueries.rollback();
+	}
+	
+	public static void DatenSpeichern() {
+		UpdateQueries.update(GenerateInsertString());
+	}
+
+	public static void AuslasungSetzen() {
+		UpdateQueries.update(StringAuslasungAnpassen());
 	}
 
 }
