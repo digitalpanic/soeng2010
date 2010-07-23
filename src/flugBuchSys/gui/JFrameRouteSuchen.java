@@ -30,8 +30,8 @@ public class JFrameRouteSuchen extends JFrameSuchen implements ActionListener {
 	private static final long serialVersionUID = 1L;
 
 	private JButton jButtonSuchen = new JButton();
-	private JButton jButtonAendern = new JButton();
-	private JButton jButtonLoeschen = new JButton();
+//	private JButton jButtonAendern = new JButton();
+//	private JButton jButtonLoeschen = new JButton();
 
 	private JRadioButton jRadioButtonno = new JRadioButton("Nein");
 	private JRadioButton jRadioButtonyes = new JRadioButton("Ja");
@@ -194,17 +194,17 @@ public class JFrameRouteSuchen extends JFrameSuchen implements ActionListener {
 				jButtonSuchen.setActionCommand("RouteSuchen");
 				jButtonSuchen.addActionListener(this);
 
-				getContentPane().add(jButtonAendern);
-				jButtonAendern.setText("Aendern");
-				jButtonAendern.setBounds(350, 275, 87, 27);
-				jButtonAendern.setActionCommand("RouteAendern");
-				jButtonAendern.addActionListener(this);
-
-				getContentPane().add(jButtonLoeschen);
-				jButtonLoeschen.setText("Loeschen");
-				jButtonLoeschen.setBounds(350, 313, 87, 27);
-				jButtonLoeschen.setActionCommand("RouteLoeschen");
-				jButtonLoeschen.addActionListener(this);
+//				getContentPane().add(jButtonAendern);
+//				jButtonAendern.setText("Aendern");
+//				jButtonAendern.setBounds(350, 275, 87, 27);
+//				jButtonAendern.setActionCommand("RouteAendern");
+//				jButtonAendern.addActionListener(this);
+//
+//				getContentPane().add(jButtonLoeschen);
+//				jButtonLoeschen.setText("Loeschen");
+//				jButtonLoeschen.setBounds(350, 313, 87, 27);
+//				jButtonLoeschen.setActionCommand("RouteLoeschen");
+//				jButtonLoeschen.addActionListener(this);
 			}
 			pack();
 			this.setSize(500, 580);
@@ -259,21 +259,21 @@ public class JFrameRouteSuchen extends JFrameSuchen implements ActionListener {
 		jButtonSuchen = buttonSuchen;
 	}
 
-	public JButton getJButtonAendern() {
-		return jButtonAendern;
-	}
-
-	public void setJButtonAendern(JButton buttonAendern) {
-		jButtonAendern = buttonAendern;
-	}
-
-	public JButton getJButtonLoeschen() {
-		return jButtonLoeschen;
-	}
-
-	public void setJButtonLoeschen(JButton buttonLoeschen) {
-		jButtonLoeschen = buttonLoeschen;
-	}
+//	public JButton getJButtonAendern() {
+//		return jButtonAendern;
+//	}
+//
+//	public void setJButtonAendern(JButton buttonAendern) {
+//		jButtonAendern = buttonAendern;
+//	}
+//
+//	public JButton getJButtonLoeschen() {
+//		return jButtonLoeschen;
+//	}
+//
+//	public void setJButtonLoeschen(JButton buttonLoeschen) {
+//		jButtonLoeschen = buttonLoeschen;
+//	}
 
 	public JRadioButton getJRadioButtonno() {
 		return jRadioButtonno;

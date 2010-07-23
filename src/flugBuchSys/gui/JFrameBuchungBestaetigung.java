@@ -9,31 +9,16 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
-
-//import flugBuchSys.app.NeueFlugBuchung;
-//import flugBuchSys.app.NeueGepaeckBuchung;
-import flugBuchSys.app.BuchungAbsetzen;
 import flugBuchSys.odbc.UpdateQueries;
 
-/**
- * This code was edited or generated using CloudGarden's Jigloo SWT/Swing GUI
- * Builder, which is free for non-commercial use. If Jigloo is being used
- * commercially (ie, by a corporation, company or business for any purpose
- * whatever) then you should purchase a license for each developer using Jigloo.
- * Please visit www.cloudgarden.com for details. Use of Jigloo implies
- * acceptance of these licensing terms. A COMMERCIAL LICENSE HAS NOT BEEN
- * PURCHASED FOR THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED LEGALLY FOR
- * ANY CORPORATE OR COMMERCIAL PURPOSE.
- */
+
 public class JFrameBuchungBestaetigung extends javax.swing.JFrame implements
 		ActionListener {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JButton jButtonBuchungBestaetigen;
 	private JButton jButtonAbbrechen;
-	private JButton jButtonzurueck;
 
 	public JLabel jLabelInfo;
 	public JLabel jLabelVorname;
@@ -57,31 +42,15 @@ public class JFrameBuchungBestaetigung extends javax.swing.JFrame implements
 	public JTextField jTextFieldKlasse;
 	public JLabel jTextLabelKlasse;
 
-	// public String gepaeckstuecke =
-	// Integer.toString(JFrameNeueBuchung.gepaeckstuecke);
-	// public String personenzahl =
-	// Integer.toString(NeueFlugBuchung.personenzahl);
 	public JFrameBuchungBestaetigung(String str) {
 		super(str);
 		initGUI();
 	}
 
-	// ich weiﬂ nicht wie du es anzeigen lassen willst aber hier sollten alle
-	// relevanten Flugdaten (Name, Ablugszeit, Zusatzgep‰ck
-	// usw nochmal aufgelistet sein und erst dann sollte alles gebucht werden.
-	// So w‰re zumindest meine Intention.
-
 	private void initGUI() {
 		try {
 			setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 			getContentPane().setLayout(null);
-			// {
-			// jButtonBuchungBestaetigen = new JButton();
-			// getContentPane().add(jButtonBuchungBestaetigen, "Center");
-			// jButtonBuchungBestaetigen.setText("Buchen");
-			// jButtonBuchungBestaetigen.setBounds(354, 459, 116, 27);
-			// jButtonBuchungBestaetigen.addActionListener(this);
-			// jButtonBuchungBestaetigen.setActionCommand("buchen");
 
 			String rueck = JFrameNeueBuchung.rueck;
 			;
@@ -98,7 +67,6 @@ public class JFrameBuchungBestaetigung extends javax.swing.JFrame implements
 					.parseInt(JFrameGepaeckBuchen.jTextFieldGepackstuecke
 							.getText());
 
-			// }
 			{
 				jButtonAbbrechen = new JButton();
 				getContentPane().add(jButtonAbbrechen);
