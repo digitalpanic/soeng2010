@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 import flugBuchSys.app.ActionEventHandler;
+import flugBuchSys.odbc.UpdateQueries;
 
 public class JFrameKundeAnlegen extends JFrameAnlegen implements ActionListener {
 
@@ -216,15 +217,16 @@ public class JFrameKundeAnlegen extends JFrameAnlegen implements ActionListener 
 
 		if (ae.getActionCommand().equals("Weiter")) {
 			this.setVisible(false);
-			int n = JOptionPane.showConfirmDialog(null,
-					"Plant der Kunde Zusatzgepäck (Sperrgepäck) mitzunehmen?",
-					"Sperrgepäck?", JOptionPane.YES_NO_OPTION);
-			if (n == 0) {
-				JFrameKundeSuchen.gepaeck = true;
-			} else {
-				JFrameKundeSuchen.gepaeck = false;
-
-			}
+			new JFrameNeueBuchung("Neue Buchung");
+//			int n = JOptionPane.showConfirmDialog(null,
+//					"Plant der Kunde Zusatzgepäck (Sperrgepäck) mitzunehmen?",
+//					"Sperrgepäck?", JOptionPane.YES_NO_OPTION);
+//			if (n == 0) {
+//				JFrameKundeSuchen.gepaeck = true;
+//			} else {
+//				JFrameKundeSuchen.gepaeck = false;
+//
+//			}
 		}
 
 		if (ae.getActionCommand().equals("KundeAnlegen")) {
