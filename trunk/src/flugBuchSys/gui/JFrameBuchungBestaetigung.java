@@ -237,7 +237,8 @@ public class JFrameBuchungBestaetigung extends javax.swing.JFrame implements
 		
 		
 		if ("Bestätigen".equals(ae.getActionCommand())) {
-			BuchungAbsetzen.CommitBuchung();
+			UpdateQueries.commit();
+			BuchungAbsetzen.AuslasungSetzen();
 			JOptionPane.showMessageDialog(null, "Reservierung wurde getätigt");
 			dispose();
 			JFrameFbsGUI open = new JFrameFbsGUI();
@@ -252,8 +253,8 @@ public class JFrameBuchungBestaetigung extends javax.swing.JFrame implements
 							"Buchungsvorgang abbrechen?",
 							JOptionPane.YES_NO_OPTION);
 			if (n == 0) {
-				BuchungAbsetzen.RollbackBuchung();
-				JOptionPane.showMessageDialog(null, "Reservierungsvorgang wurde abgebrochen");
+				UpdateQueries.rollback();
+				JOptionPane.showMessageDialog(null, "Die Reserervierung wurde abgebrochen");
 				dispose();
 				JFrameFbsGUI open = new JFrameFbsGUI();
 				open.setLocationRelativeTo(null);
