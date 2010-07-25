@@ -76,26 +76,13 @@ public class BuchungAbsetzen {
 		return Statement;
 	}
 
-	public static void CommitBuchung(){
-		DatenSpeichern();
-		UpdateQueries.commit();
-		AuslasungSetzen();
-		UpdateQueries.commit();
-	}
-	
-	public static void RollbackBuchung(){
-		DatenSpeichern();
-		UpdateQueries.rollback();
-		AuslasungSetzen();
-		UpdateQueries.rollback();
-	}
-	
 	public static void DatenSpeichern() {
 		UpdateQueries.update(GenerateInsertString());
 	}
 
 	public static void AuslasungSetzen() {
 		UpdateQueries.update(StringAuslasungAnpassen());
+		UpdateQueries.commit();
 	}
 
 }
