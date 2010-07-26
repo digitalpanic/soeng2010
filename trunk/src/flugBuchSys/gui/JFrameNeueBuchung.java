@@ -170,14 +170,14 @@ public class JFrameNeueBuchung extends javax.swing.JFrame implements
 			{
 				jTextFieldAbflugDatum = new JTextField();
 				getContentPane().add(jTextFieldAbflugDatum);
-				jTextFieldAbflugDatum.setText("01.02.2010");
+				jTextFieldAbflugDatum.setText("31.07.2010");
 				jTextFieldAbflugDatum.setEditable(false);
 				jTextFieldAbflugDatum.setBounds(23, 217, 113, 22);
 			}
 			{
 				jTextFieldRueckflugDatum = new JTextField();
 				getContentPane().add(jTextFieldRueckflugDatum);
-				jTextFieldRueckflugDatum.setText("08.02.2010");
+				jTextFieldRueckflugDatum.setText("07.08.2010");
 				jTextFieldRueckflugDatum.setEditable(false);
 				jTextFieldRueckflugDatum.setBounds(160, 217, 113, 22);
 			}
