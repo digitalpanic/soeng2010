@@ -47,6 +47,7 @@ public class BuchungAbsetzen {
 				+ "', '"
 				+ strServiceKlasse + "', 'J', " + gepaeckstuecke + ")");
 
+		System.out.println(Statement);
 		return Statement;
 
 	}

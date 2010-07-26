@@ -66,6 +66,7 @@ public class UpdateQueries extends Object {
 	
 	public static void commit(){
 		try {
+			System.out.println(cn.toString());
 			cn.commit();
 			//cn.close();
 		} catch (SQLException e) {
